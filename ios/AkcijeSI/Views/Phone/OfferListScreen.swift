@@ -13,7 +13,7 @@ struct OfferListScreen: View {
     @State private var addedTick = 0
 
     var body: some View {
-        let terms = watch.map(\.term)
+        let terms = watch.map { WatchTerm(term: $0.term, category: $0.category) }
         let groups = Browse.groups(scope: scope, store: store, ui: ui, watchTerms: terms, threshold: threshold)
         List {
             if case .highlights = scope {

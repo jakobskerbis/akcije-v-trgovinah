@@ -4,6 +4,11 @@ import Foundation
 /// Slovenščina ima sklone ("piščančje prsi" / "piščančja prsa"), zato primerjamo
 /// predpone besed: pri daljših besedah odrežemo zadnji dve črki, pri krajših eno.
 /// Enako pravilo uporablja Flutter aplikacija (lib/logic/matching.dart).
+struct WatchTerm: Hashable {
+    let term: String
+    let category: String?
+}
+
 enum Matching {
     static func normalize(_ s: String) -> String {
         s.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: Locale(identifier: "sl_SI"))
@@ -30,6 +35,27 @@ enum Matching {
             let st = stem(tw)
             return nameWords.contains { $0.hasPrefix(st) }
         }
+    }
+
+    /// Opazovano živilo s kategorijo: "mleko" v kategoriji mlečni izdelki ne zadene
+    /// "Mleko za čiščenje" (drogerija).
+    static func matches(_ w: WatchTerm, offer: Offer) -> Bool {
+        if let c = w.category, offer.category != c { return false }
+        return matches(term: w.term, name: offer.name)
+    }
+
+    /// Kategorija za novo opazovano živilo: najpogostejša med trenutnimi zadetki,
+    /// če obsega vsaj polovico zadetkov.
+    static func inferCategory(term: String, offers: [Offer]) -> String? {
+        var counts: [String: Int] = [:]
+        var total = 0
+        for o in offers where !o.isExpired() && matches(term: term, name: o.name) {
+            total += 1
+            if let c = o.category { counts[c, default: 0] += 1 }
+        }
+        guard let best = counts.max(by: { $0.value < $1.value }), total > 0,
+              Double(best.value) / Double(total) >= 0.5 else { return nil }
+        return best.key
     }
 
     static func matchesSearch(_ query: String, offer: Offer) -> Bool {

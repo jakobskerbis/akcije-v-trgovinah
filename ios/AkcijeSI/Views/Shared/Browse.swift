@@ -17,11 +17,11 @@ struct OfferGroup: Identifiable {
 
 @MainActor
 enum Browse {
-    static func groups(scope: BrowseScope, store: AppStore, ui: UIState, watchTerms: [String], threshold: Int) -> [OfferGroup] {
+    static func groups(scope: BrowseScope, store: AppStore, ui: UIState, watchTerms: [WatchTerm], threshold: Int) -> [OfferGroup] {
         let base = store.visibleOffers(filter: ui.filter, search: ui.search)
         switch scope {
         case .highlights:
-            let watch = base.filter { o in watchTerms.contains { Matching.matches(term: $0, name: o.name) } }
+            let watch = base.filter { o in watchTerms.contains { Matching.matches($0, offer: o) } }
             let discount = base.filter { ($0.discountPct ?? 0) >= threshold }
             let best = base.filter(\.isBestUnitPrice)
             var out: [OfferGroup] = []

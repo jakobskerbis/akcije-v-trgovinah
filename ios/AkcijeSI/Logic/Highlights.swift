@@ -54,11 +54,11 @@ struct OfferFilter: Equatable {
 }
 
 enum Highlights {
-    static func reasons(for o: Offer, threshold: Int, watchTerms: [String]) -> Set<HighlightReason> {
+    static func reasons(for o: Offer, threshold: Int, watchTerms: [WatchTerm]) -> Set<HighlightReason> {
         var r = Set<HighlightReason>()
         if (o.discountPct ?? 0) >= threshold { r.insert(.discount) }
         if o.isBestUnitPrice { r.insert(.bestUnit) }
-        if watchTerms.contains(where: { Matching.matches(term: $0, name: o.name) }) { r.insert(.watch) }
+        if watchTerms.contains(where: { Matching.matches($0, offer: o) }) { r.insert(.watch) }
         return r
     }
 

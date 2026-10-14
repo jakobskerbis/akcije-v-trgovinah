@@ -59,7 +59,8 @@ class ChainScope extends BrowseScope {
 
 class WatchScope extends BrowseScope {
   final String term;
-  const WatchScope(this.term);
+  final String? category;
+  const WatchScope(this.term, [this.category]);
 }
 
 class UiState extends ChangeNotifier {

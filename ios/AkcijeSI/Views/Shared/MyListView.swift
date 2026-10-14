@@ -63,10 +63,14 @@ struct MyListView: View {
                         .accessibilityLabel("Dodaj opazovano živilo")
                 }
                 ForEach(watch) { w in
-                    let hits = store.offers.filter { !$0.isExpired() && Matching.matches(term: w.term, name: $0.name) }
-                    NavigationLink(value: WatchScope(term: w.term)) {
+                    let wt = WatchTerm(term: w.term, category: w.category)
+                    let hits = store.offers.filter { !$0.isExpired() && Matching.matches(wt, offer: $0) }
+                    NavigationLink(value: WatchScope(term: w.term, category: w.category)) {
                         HStack {
-                            Text(w.term)
+                            VStack(alignment: .leading) {
+                                Text(w.term)
+                                if let c = store.category(w.category) { Text(c.label).font(.caption2).foregroundStyle(.secondary) }
+                            }
                             Spacer()
                             Text(hits.isEmpty ? "ni akcij" : "\(hits.count) akcij").foregroundStyle(hits.isEmpty ? Color.secondary : Color.accentColor)
                             if let by = w.by { Text(by).font(.caption2).foregroundStyle(.tertiary) }
@@ -128,7 +132,8 @@ struct MyListView: View {
     }
 
     private func addWatch() {
-        ListActions.addWatch(term: newWatch, context: context, sync: sync)
+        let cat = Matching.inferCategory(term: newWatch, offers: store.offers)
+        ListActions.addWatch(term: newWatch, category: cat, context: context, sync: sync)
         newWatch = ""
         tick += 1
     }
@@ -139,7 +144,10 @@ struct MyListView: View {
     }
 }
 
-struct WatchScope: Hashable { let term: String }
+struct WatchScope: Hashable {
+    let term: String
+    var category: String? = nil
+}
 
 struct ShoppingRow: View {
     @Environment(AppStore.self) private var store
@@ -174,7 +182,8 @@ struct WatchResultsView: View {
     let scope: WatchScope
 
     var body: some View {
-        let hits = Highlights.sort(store.offers.filter { !$0.isExpired() && Matching.matches(term: scope.term, name: $0.name) }, by: .unitPrice)
+        let wt = WatchTerm(term: scope.term, category: scope.category)
+        let hits = Highlights.sort(store.offers.filter { !$0.isExpired() && Matching.matches(wt, offer: $0) }, by: .unitPrice)
         List(hits) { o in
             NavigationLink(value: o) { OfferRow(offer: o, reasons: [.watch]) }
         }

@@ -31,7 +31,6 @@ struct RootView: View {
     }
 
     private func start() async {
-        applyOrientationArgument()
         store.loadCached(context: context)
         if store.demoMode { seedDemo(); return }
         if !didAskNotifications && !store.demoMode {
@@ -55,7 +54,7 @@ struct RootView: View {
         let existing = (try? context.fetch(FetchDescriptor<WatchItem>())) ?? []
         guard existing.isEmpty else { return }
         for (term, by) in [("piščančje prsi", "Jakob"), ("mleko", "Partnerka"), ("losos", "Partnerka"), ("kava", "Jakob"), ("mandarine", "Jakob")] {
-            context.insert(WatchItem(term: term, by: by))
+            context.insert(WatchItem(term: term, category: Matching.inferCategory(term: term, offers: store.offers), by: by))
         }
         let picks = store.offers.filter { ($0.discountPct ?? 0) >= 30 && store.category($0.category)?.food == true }.prefix(4)
         for (i, o) in picks.enumerated() {
@@ -65,15 +64,6 @@ struct RootView: View {
         }
         context.insert(ShoppingItem(title: "Kruh", by: "Partnerka"))
         try? context.save()
-    }
-
-    /// Za zaslonske posnetke v CI: -landscape / -portrait.
-    private func applyOrientationArgument() {
-        let args = ProcessInfo.processInfo.arguments
-        let mask: UIInterfaceOrientationMask? = args.contains("-landscape") ? .landscapeRight
-            : (args.contains("-portrait") ? .portrait : nil)
-        guard let mask, let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-        scene.requestGeometryUpdate(.iOS(interfaceOrientations: mask)) { _ in }
     }
 
     /// Ko je aplikacija odprta, preverja spremembe partnerja vsakih 20 s.

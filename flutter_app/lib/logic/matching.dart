@@ -38,6 +38,32 @@ bool matchesTerm(String term, String name) {
   });
 }
 
+/// Opazovano živilo s kategorijo ("mleko" v mlečnih izdelkih ne zadene "Mleko za čiščenje").
+class WatchTerm {
+  final String term;
+  final String? category;
+  const WatchTerm(this.term, [this.category]);
+}
+
+bool matchesWatch(WatchTerm w, String name, String? category) {
+  if (w.category != null && category != w.category) return false;
+  return matchesTerm(w.term, name);
+}
+
+/// Najpogostejša kategorija med trenutnimi zadetki, če obsega vsaj polovico.
+String? inferCategory(String term, Iterable<({String name, String? category})> offers) {
+  final counts = <String, int>{};
+  var total = 0;
+  for (final o in offers) {
+    if (!matchesTerm(term, o.name)) continue;
+    total++;
+    if (o.category != null) counts[o.category!] = (counts[o.category!] ?? 0) + 1;
+  }
+  if (total == 0 || counts.isEmpty) return null;
+  final best = counts.entries.reduce((a, b) => a.value >= b.value ? a : b);
+  return best.value / total >= 0.5 ? best.key : null;
+}
+
 bool matchesSearch(String query, String name, String? brand, String chain) {
   final q = query.trim();
   if (q.isEmpty) return true;

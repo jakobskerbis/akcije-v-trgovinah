@@ -20,14 +20,15 @@ enum Notifier {
 
         var already = Set(d.stringArray(forKey: notifiedKey) ?? [])
         let firstRun = already.isEmpty
-        let terms = ((try? context.fetch(FetchDescriptor<WatchItem>())) ?? []).filter { !$0.deleted }.map(\.term)
+        let terms = ((try? context.fetch(FetchDescriptor<WatchItem>())) ?? []).filter { !$0.deleted }
+            .map { WatchTerm(term: $0.term, category: $0.category) }
         let active = store.offers.filter { !$0.isExpired() }
 
         var watchHits: [(Offer, String)] = []
         var highlightHits: [Offer] = []
         for o in active where !already.contains(o.id) {
-            if notifyWatch, let t = terms.first(where: { Matching.matches(term: $0, name: o.name) }) {
-                watchHits.append((o, t))
+            if notifyWatch, let t = terms.first(where: { Matching.matches($0, offer: o) }) {
+                watchHits.append((o, t.term))
             } else if notifyHighlights,
                       store.category(o.category)?.food == true,
                       (o.discountPct ?? 0) >= threshold || o.isBestUnitPrice {

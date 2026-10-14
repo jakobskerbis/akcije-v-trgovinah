@@ -39,11 +39,11 @@ class OfferFilter {
   }
 }
 
-Set<HighlightReason> reasonsFor(Offer o, int threshold, List<String> watchTerms) {
+Set<HighlightReason> reasonsFor(Offer o, int threshold, List<WatchTerm> watchTerms) {
   final r = <HighlightReason>{};
   if ((o.discountPct ?? 0) >= threshold) r.add(HighlightReason.discount);
   if (o.bestUnitPrice) r.add(HighlightReason.bestUnit);
-  if (watchTerms.any((t) => matchesTerm(t, o.name))) r.add(HighlightReason.watch);
+  if (watchTerms.any((t) => matchesWatch(t, o.name, o.category))) r.add(HighlightReason.watch);
   return r;
 }
 

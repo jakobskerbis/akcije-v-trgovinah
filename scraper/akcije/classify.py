@@ -464,7 +464,7 @@ KINDS: list[Kind] = [
     Kind("sladkor", "Sladkor", r"sladkor\b", ("ostalo",), r"brez sladkorja|sladkorn"),
     Kind("olje", "Sončnično / jedilno olje", r"(sončničn|jediln|repičn|rastlinsk)\w* olj|^olje\b", ("ostalo",)),
     Kind("olivno-olje", "Olivno olje", r"olivn\w* olj|oljčn\w* olj|ekstra deviško", ("ostalo",)),
-    Kind("kava-mleta", "Kava (mleta / zrna)", r"kav[ae]\b|espresso", ("pijace",), r"instant|kapsul|ledena|napitek|frapp|3 ?v ?1|cappuccino|latte"),
+    Kind("kava-mleta", "Kava (mleta / zrna)", r"kav[ae]\b|espresso", ("pijace",), r"instant|kapsul|ledena|napitek|frap|3 ?v ?1|cappuccino|latte|ice"),
     Kind("kava-kapsule", "Kava v kapsulah", r"kapsul\w* kav|kav\w* .*kapsul", ("pijace",)),
     Kind("voda", "Voda", r"mineraln|naravn\w* vod|\bvoda\b", ("pijace",), r"okus|aroma"),
     Kind("pivo", "Pivo", r"\bpiv[oa]\b|lager|radler", ("pijace",), r"brezalkohol"),

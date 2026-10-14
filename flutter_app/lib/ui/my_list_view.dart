@@ -131,14 +131,15 @@ class _MyListViewState extends State<MyListView> {
                   child: const Icon(Icons.delete, color: Colors.white)),
               onDismissed: (_) => s.lists.deleteWatch(w),
               child: Builder(builder: (context) {
-                final hits = s.store.offers.where((o) => !o.isExpired() && matchesTerm(w.term, o.name)).length;
+                final wt = WatchTerm(w.term, w.category);
+                final hits = s.store.offers.where((o) => !o.isExpired() && matchesWatch(wt, o.name, o.category)).length;
                 return ListTile(
                   title: Text(w.term),
-                  subtitle: w.by != null ? Text(w.by!) : null,
+                  subtitle: Text([s.store.category(w.category)?.label, w.by].whereType<String>().join(' · ')),
                   trailing: Text(hits == 0 ? 'ni akcij' : '$hits akcij',
                       style: TextStyle(color: hits == 0 ? Theme.of(context).hintColor : Theme.of(context).colorScheme.primary)),
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                    builder: (_) => Scaffold(appBar: AppBar(title: Text(w.term)), body: OffersView(scope: WatchScope(w.term))),
+                    builder: (_) => Scaffold(appBar: AppBar(title: Text(w.term)), body: OffersView(scope: WatchScope(w.term, w.category))),
                   )),
                 );
               }),
@@ -175,7 +176,9 @@ class _MyListViewState extends State<MyListView> {
   }
 
   void _addWatch() {
-    AppScope.of(context).lists.addWatch(_watch.text);
+    final s = AppScope.of(context);
+    final cat = inferCategory(_watch.text, s.store.offers.where((o) => !o.isExpired()).map((o) => (name: o.name, category: o.category)));
+    s.lists.addWatch(_watch.text, category: cat);
     _watch.clear();
     HapticFeedback.lightImpact();
   }

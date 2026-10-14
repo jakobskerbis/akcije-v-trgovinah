@@ -25,7 +25,7 @@ Future<void> main() async {
   final lists = ListsStore(demoMode: demoMode);
   final ui = UiState();
   await Future.wait([store.loadCached(), lists.load(), ui.load()]);
-  if (demoMode) lists.seedDemo(store.offers);
+  if (demoMode) lists.seedDemo(store.offers.where((o) => store.category(o.category)?.food == true).toList());
   runApp(AkcijeApp(store: store, lists: lists, ui: ui));
 }
 
@@ -106,8 +106,8 @@ class _AkcijeAppState extends State<AkcijeApp> {
       child: MaterialApp(
         title: 'Akcije SI',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: seed), useMaterial3: true),
-        darkTheme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: seed, brightness: Brightness.dark), useMaterial3: true),
+        theme: _theme(ColorScheme.fromSeed(seedColor: seed)),
+        darkTheme: _theme(ColorScheme.fromSeed(seedColor: seed, brightness: Brightness.dark)),
         themeMode: ThemeMode.system,
         locale: const Locale('sl', 'SI'),
         supportedLocales: const [Locale('sl', 'SI'), Locale('en')],
@@ -127,3 +127,11 @@ class _AkcijeAppState extends State<AkcijeApp> {
     );
   }
 }
+
+ThemeData _theme(ColorScheme scheme) => ThemeData(
+      colorScheme: scheme,
+      useMaterial3: true,
+      navigationBarTheme: const NavigationBarThemeData(
+        labelTextStyle: WidgetStatePropertyAll(TextStyle(fontSize: 11, overflow: TextOverflow.ellipsis)),
+      ),
+    );

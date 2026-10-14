@@ -1,10 +1,1199 @@
 {
-  "version": 0,
+  "version": 1,
   "updatedAt": "2026-10-14",
   "title": "Vodič: aplikacije in programi zvestobe",
-  "intro": "Vodič je v pripravi.",
-  "apps": [],
-  "loyaltyPrograms": [],
-  "coupleTips": [],
-  "disclaimer": "Pravila programov se spreminjajo; datumi pri virih povedo, kdaj so bili podatki preverjeni."
+  "intro": "Preverjen pregled aplikacij in kartic zvestobe za trgovine, ki jih spremlja Akcije SI (in dm), za Sežano, Kozino, Divačo, Koper, Ljubljano, Ajdovščino in Vipavo. Vsako dejstvo ima vir in datum preverjanja; nasveti so posebej označeni. Na koncu je razvrščen seznam programov, v katere se vama splača včlaniti.",
+  "apps": [
+    {
+      "id": "lidl-plus",
+      "chain": "lidl",
+      "appName": "Lidl Plus",
+      "program": "Lidl Plus",
+      "installPriority": 1,
+      "recommendation": "Namesti",
+      "summary": "Digitalna kartica, cene Lidl Plus in tedenski Super bonus (10 % na petkov nakup).",
+      "benefits": [
+        {
+          "text": "Super bonus: ob nakupu nad 25 € v torek ali sredo (s kartico Lidl Plus) v petek istega tedna dobiš kupon za 10 % popusta na celoten nakup.",
+          "sources": [
+            {
+              "title": "Lidl Plus – Super bonus",
+              "url": "https://www.lidl.si/c/lidl-plus-super-bonus/s10030494",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Kupon je treba pred unovčenjem aktivirati v aplikaciji. Velja samo v petek istega tedna, za nakupe do skupne vrednosti 300 €; kupec dobi največ en kupon na teden, popusti se ne seštevajo.",
+          "sources": [
+            {
+              "title": "Lidl Plus – Super bonus",
+              "url": "https://www.lidl.si/c/lidl-plus-super-bonus/s10030494",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Lidl Plus prinaša ponudbe, prilagojene tvojim potrebam, nagradne igre, popuste in posebne akcije.",
+          "sources": [
+            {
+              "title": "Splošni pogoji sodelovanja v programu Lidl Plus (različica 2.3)",
+              "url": "https://www.lidl.si/c/informacije-lidl-plus-splosni-pogoji-uporabe/s10020644",
+              "date": "2026-07",
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Del akcijskih cen v Lidlu velja samo s kartico Lidl Plus. Akcije SI jih prikaže z značko »Lidl Plus«.",
+          "sources": [
+            {
+              "title": "Lidl – Super ponudba od četrtka",
+              "url": "https://www.lidl.si/c/super-ponudba-od-cetrtka/a10104884",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        }
+      ],
+      "personalCoupons": {
+        "answer": "da",
+        "text": "Pogoji navajajo ponudbe, prilagojene tvojim potrebam in željam.",
+        "sources": [
+          {
+            "title": "Splošni pogoji sodelovanja v programu Lidl Plus (različica 2.3)",
+            "url": "https://www.lidl.si/c/informacije-lidl-plus-splosni-pogoji-uporabe/s10020644",
+            "date": "2026-07",
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "activationNeeded": {
+        "answer": "da",
+        "text": "Kupon Super bonus moraš pred petkovim nakupom aktivirati v aplikaciji.",
+        "sources": [
+          {
+            "title": "Lidl Plus – Super bonus",
+            "url": "https://www.lidl.si/c/lidl-plus-super-bonus/s10030494",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "cardLinking": [
+        {
+          "text": "Kartica je digitalna, v aplikaciji: na blagajni jo skeniraš na čitalniku, obrnjenem proti tebi.",
+          "sources": [
+            {
+              "title": "Lidl Plus – Super bonus",
+              "url": "https://www.lidl.si/c/lidl-plus-super-bonus/s10030494",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Za uporabo moraš biti polnoleten (vsaj 18 let), sodelovanje je dovoljeno le za zasebne namene.",
+          "sources": [
+            {
+              "title": "Splošni pogoji sodelovanja v programu Lidl Plus (različica 2.3)",
+              "url": "https://www.lidl.si/c/informacije-lidl-plus-splosni-pogoji-uporabe/s10020644",
+              "date": "2026-07",
+              "accessed": "2026-10-14"
+            }
+          ]
+        }
+      ],
+      "forCouple": [
+        {
+          "text": "Super bonus je omejen na en kupon na kupca na teden.",
+          "sources": [
+            {
+              "title": "Lidl Plus – Super bonus",
+              "url": "https://www.lidl.si/c/lidl-plus-super-bonus/s10030494",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Če vsak od vaju uporablja svoj račun Lidl Plus in opravi svoj nakup nad 25 € v torek ali sredo, dobi vsak svoj petkov kupon.",
+          "sources": [
+            {
+              "title": "Lidl Plus – Super bonus",
+              "url": "https://www.lidl.si/c/lidl-plus-super-bonus/s10030494",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ],
+          "advice": true
+        }
+      ],
+      "storesInRegion": {
+        "answer": "delno",
+        "text": "Trgovine: Sežana (Partizanska cesta 71b), Koper, Ajdovščina, Ljubljana. V Kozini, Divači in Vipavi jih na seznamu ni.",
+        "sources": [
+          {
+            "title": "Lidl – seznam trgovin (sitemap odpiralnih časov)",
+            "url": "https://www.lidl.si/s/sl-SI/informacije-odpiralni-casi/sitemap.xml",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "links": {
+        "ios": "https://apps.apple.com/si/app/lidl-plus/id1238611143",
+        "android": "https://play.google.com/store/apps/details?id=com.lidl.eci.lidlplus",
+        "web": "https://www.lidl.si/c/informacije-lidl-plus/s10020636"
+      }
+    },
+    {
+      "id": "mercator-moj-m",
+      "chain": "mercator",
+      "appName": "Moj M",
+      "program": "Pika kartica",
+      "installPriority": 2,
+      "recommendation": "Namesti",
+      "summary": "Pika kartica v telefonu, Pika kuponi, Moja izbira in zbiranje pik v trimesečnih obdobjih.",
+      "benefits": [
+        {
+          "text": "Pika ugodnosti: Pika cene, 25 % popusta na izbrani izdelek ALI 10 % popusta na celoten nakup, dvojne ali trojne pike ob nakupu, posebne ugodnosti za upokojence.",
+          "sources": [
+            {
+              "title": "Mercator – Moja Pika",
+              "url": "https://www.mercator.si/pika/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Nakup od 1 € prinaša pike: 1,00–1,99 € = 1 pika, 2,00–2,99 € = 2 piki itd.",
+          "sources": [
+            {
+              "title": "Mercator – Pika bonitetni sistem",
+              "url": "https://www.mercator.si/pika/bonitetni-sistem/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Prihranek za zbrane pike: 600 pik = 20 €, 1200 = 40 €, 1800 = 100 €, 2400 = 120 €, 3000 = 140 €, 3600 = 200 €.",
+          "sources": [
+            {
+              "title": "Mercator – Pika bonitetni sistem",
+              "url": "https://www.mercator.si/pika/bonitetni-sistem/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Bonitetno obdobje traja 3 mesece (1. 2.–30. 4., 1. 5.–31. 7., 1. 8.–31. 10., 1. 11.–31. 1.); pike se ne prenesejo v naslednje obdobje. Zbrane pike unovči do 30. 10. 2026.",
+          "sources": [
+            {
+              "title": "Mercator – Pika bonitetni sistem",
+              "url": "https://www.mercator.si/pika/bonitetni-sistem/",
+              "date": null,
+              "accessed": "2026-10-14"
+            },
+            {
+              "title": "Mercator – Moja Pika",
+              "url": "https://www.mercator.si/pika/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "V aplikaciji Moj M so Pika kuponi (unovčiš jih s kodo na telefonu), e-nalepke, Moja izbira (ugodnosti, ki jih aktiviraš na Pika kartici) in izzivi za dodatne pike.",
+          "sources": [
+            {
+              "title": "Mercator – mobilna aplikacija Moj M",
+              "url": "https://www.mercator.si/aktualno/mobilna-aplikacija-moj-m/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        }
+      ],
+      "personalCoupons": {
+        "answer": "da",
+        "text": "Moj M na podlagi tvojih nakupov pokaže tvojih Top 5 tedna; v aplikaciji te čakajo tvoji aktualni Pika kuponi.",
+        "sources": [
+          {
+            "title": "Mercator – mobilna aplikacija Moj M",
+            "url": "https://www.mercator.si/aktualno/mobilna-aplikacija-moj-m/",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "activationNeeded": {
+        "answer": "delno",
+        "text": "Moja izbira in izzivi zahtevajo aktivacijo v aplikaciji; Pika kupone unovčiš s kodo na telefonu.",
+        "sources": [
+          {
+            "title": "Mercator – mobilna aplikacija Moj M",
+            "url": "https://www.mercator.si/aktualno/mobilna-aplikacija-moj-m/",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "cardLinking": [
+        {
+          "text": "Modro (bonitetno) Pika kartico dobi oseba, starejša od 15 let, ena na uporabnika.",
+          "sources": [
+            {
+              "title": "Splošna določila za izdajanje in uporabo bonitetne oziroma plačilno-kreditne Pika kartice",
+              "url": "https://www.mercator.si/assets/Uploads/file-module/Splosna-dolocila-za-izdajanje-in-uporabo-bonitetne-oziroma-placilno-kreditne-Pika-kartice-februar-2026.pdf",
+              "date": "2026-02",
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Pika kartica je na voljo tudi v aplikaciji Moj M.",
+          "sources": [
+            {
+              "title": "Mercator – Moja Pika",
+              "url": "https://www.mercator.si/pika/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        }
+      ],
+      "forCouple": [
+        {
+          "text": "Pike se samodejno seštevajo med karticami istega računa.",
+          "sources": [
+            {
+              "title": "Mercator – Pika bonitetni sistem",
+              "url": "https://www.mercator.si/pika/bonitetni-sistem/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Dodatna in družinska kartica obstajata pri plačilno-kreditni (zeleni oz. zlati) Piki. Družinska glasi na imetnika s pripisom »družina« in z njo lahko kupuje vsak prinosnik.",
+          "sources": [
+            {
+              "title": "Splošna določila za izdajanje in uporabo bonitetne oziroma plačilno-kreditne Pika kartice",
+              "url": "https://www.mercator.si/assets/Uploads/file-module/Splosna-dolocila-za-izdajanje-in-uporabo-bonitetne-oziroma-placilno-kreditne-Pika-kartice-februar-2026.pdf",
+              "date": "2026-02",
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Ker pike po treh mesecih zapadejo in so pragi visoki, naj gredo vajini skupni nakupi na en Pika račun.",
+          "sources": [
+            {
+              "title": "Mercator – Pika bonitetni sistem",
+              "url": "https://www.mercator.si/pika/bonitetni-sistem/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ],
+          "advice": true
+        }
+      ],
+      "storesInRegion": {
+        "answer": "delno",
+        "text": "Prodajalne: Sežana, Vipava, Koper, Ajdovščina, Ljubljana. V Kozini in Divači jih na seznamu nismo našli.",
+        "sources": [
+          {
+            "title": "Mercator – prodajna mesta",
+            "url": "https://www.mercator.si/prodajna-mesta/",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "links": {
+        "ios": "https://apps.apple.com/si/app/moj-m/id1212233728",
+        "android": "https://play.google.com/store/apps/details?id=si.mercator.mojm",
+        "web": "https://www.mercator.si/pika/"
+      }
+    },
+    {
+      "id": "tus",
+      "chain": "tus",
+      "appName": "Tuš",
+      "program": "Tuš klub",
+      "installPriority": 3,
+      "recommendation": "Namesti",
+      "summary": "Tuš klub kartica: izdelki Tuš klub −50 %, Mojih 10, tedenski kuponi in D*NAR.",
+      "benefits": [
+        {
+          "text": "Izdelki z oznako »Tuš klub najmanj −50 %«: popust dobiš ob predložitvi Tuš klub kartice.",
+          "sources": [
+            {
+              "title": "Tuš klub – pogosta vprašanja in odgovori",
+              "url": "https://www.tus.si/tus-klub/pogosta-vprasanja-in-odgovori/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Mojih 10: izbereš 10 najljubših izdelkov in jih več mesecev kupuješ do 50 % ugodneje. Trenutna ponudba velja do 5. 1. 2027.",
+          "sources": [
+            {
+              "title": "Tuš – Mojih 10",
+              "url": "https://www.tus.si/aktualno/akcijska-ponudba/mojih-10/",
+              "date": null,
+              "accessed": "2026-10-14"
+            },
+            {
+              "title": "Tuš klub – pogosta vprašanja in odgovori",
+              "url": "https://www.tus.si/tus-klub/pogosta-vprasanja-in-odgovori/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "D*NAR je vrednost v evrih, ki jo zbiraš s kuponi; z njim plačuješ nakupe v Tušu.",
+          "sources": [
+            {
+              "title": "Tuš klub – pogosta vprašanja in odgovori",
+              "url": "https://www.tus.si/tus-klub/pogosta-vprasanja-in-odgovori/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Tedenski kuponi: npr. −25 % za izdelek po izbiri (en kos, pri tehtanem blagu do 5 kg) in D*NAR ob nakupu nad 30 €. Na en nakup z eno kartico unovčiš en kupon; kupon −25 % ne velja za akcijske izdelke, Tuš klub −50 %, aktivirane Mojih 10, alkohol in še nekatere izjeme.",
+          "sources": [
+            {
+              "title": "Tuš – splošni pogoji kuponov",
+              "url": "https://www.tus.si/katalog/splosni-pogoji-kuponi/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "V aplikaciji spremljaš stanje D*NAR-ja, akcije, mobilne kupone in izbiraš Mojih 10.",
+          "sources": [
+            {
+              "title": "Tuš – mobilna aplikacija",
+              "url": "https://www.tus.si/tus-klub/mobilna-aplikacija/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        }
+      ],
+      "personalCoupons": {
+        "answer": "delno",
+        "text": "Tedenski kuponi so enaki v letaku, e-obveščanju in aplikaciji; po svoje izbereš le izdelke Mojih 10.",
+        "sources": [
+          {
+            "title": "Tuš – splošni pogoji kuponov",
+            "url": "https://www.tus.si/katalog/splosni-pogoji-kuponi/",
+            "date": null,
+            "accessed": "2026-10-14"
+          },
+          {
+            "title": "Tuš klub – pogosta vprašanja in odgovori",
+            "url": "https://www.tus.si/tus-klub/pogosta-vprasanja-in-odgovori/",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "activationNeeded": {
+        "answer": "delno",
+        "text": "Izdelke Mojih 10 moraš aktivirati (splet, aplikacija ali kupon iz kataloga); tedenske kupone pokažeš na blagajni s kartico.",
+        "sources": [
+          {
+            "title": "Tuš klub – pogosta vprašanja in odgovori",
+            "url": "https://www.tus.si/tus-klub/pogosta-vprasanja-in-odgovori/",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "cardLinking": [
+        {
+          "text": "Kartica je brezplačna in brez obveznosti; včlaniš se v trgovini, v aplikaciji Tuš ali na spletu.",
+          "sources": [
+            {
+              "title": "Tuš klub – pogosta vprašanja in odgovori",
+              "url": "https://www.tus.si/tus-klub/pogosta-vprasanja-in-odgovori/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Kupone lahko unovčiš le ob predložitvi Tuš klub kartice.",
+          "sources": [
+            {
+              "title": "Tuš klub – pogosta vprašanja in odgovori",
+              "url": "https://www.tus.si/tus-klub/pogosta-vprasanja-in-odgovori/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        }
+      ],
+      "forCouple": [
+        {
+          "text": "Pogoji kuponov: »Ista oseba ne more opraviti več zaporednih nakupov z več Tuš klub karticami.«",
+          "sources": [
+            {
+              "title": "Tuš – splošni pogoji kuponov",
+              "url": "https://www.tus.si/katalog/splosni-pogoji-kuponi/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Vsak naj ima svojo kartico in svoj izbor Mojih 10 (skupaj 20 izdelkov), nakupuje pa vsak s svojo kartico.",
+          "sources": [
+            {
+              "title": "Tuš klub – pogosta vprašanja in odgovori",
+              "url": "https://www.tus.si/tus-klub/pogosta-vprasanja-in-odgovori/",
+              "date": null,
+              "accessed": "2026-10-14"
+            },
+            {
+              "title": "Tuš – splošni pogoji kuponov",
+              "url": "https://www.tus.si/katalog/splosni-pogoji-kuponi/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ],
+          "advice": true
+        }
+      ],
+      "storesInRegion": {
+        "answer": "da",
+        "text": "Poslovalnice: Sežana in Kozina (supermarket), Divača (market), Koper, Ljubljana.",
+        "sources": [
+          {
+            "title": "Tuš – delovni časi poslovalnic",
+            "url": "https://www.tus.si/delovni-casi/",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "links": {
+        "ios": null,
+        "android": null,
+        "web": "https://www.tus.si/tus-klub/mobilna-aplikacija/"
+      }
+    },
+    {
+      "id": "spar-plus",
+      "chain": "spar",
+      "appName": "SPAR plus",
+      "program": "SPAR plus kartica",
+      "installPriority": 4,
+      "recommendation": "Namesti",
+      "summary": "Kartica zvestobe za Spar, Interspar in SPAR Online, s prilagojenimi ponudbami in kuponi.",
+      "benefits": [
+        {
+          "text": "Splošni in posebni popusti v trgovinah Spar, Interspar, SPAR partner in v SPAR Online; posebne ponudbe, prilagojene nakupnim navadam; akcije za člane (npr. točke zvestobe); dobroimetje na kartici.",
+          "sources": [
+            {
+              "title": "Splošni pogoji poslovanja za imetnike SPAR plus kartice",
+              "url": "https://www.spar.si/content/dam/sparsiwebsite/spar-plus/splosni-pogoji/splosni-pogoji-november2025spar.pdf",
+              "date": "2025-11",
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Kuponi s črtno kodo (v aplikaciji, e-pošti ali SMS) veljajo ob predložitvi kartice; število koriščenj je navedeno na kuponu.",
+          "sources": [
+            {
+              "title": "Splošni pogoji poslovanja za imetnike SPAR plus kartice",
+              "url": "https://www.spar.si/content/dam/sparsiwebsite/spar-plus/splosni-pogoji/splosni-pogoji-november2025spar.pdf",
+              "date": "2025-11",
+              "accessed": "2026-10-14"
+            }
+          ]
+        }
+      ],
+      "personalCoupons": {
+        "answer": "da",
+        "text": "Pogoji navajajo posebne ponudbe, prilagojene nakupnim navadam imetnika.",
+        "sources": [
+          {
+            "title": "Splošni pogoji poslovanja za imetnike SPAR plus kartice",
+            "url": "https://www.spar.si/content/dam/sparsiwebsite/spar-plus/splosni-pogoji/splosni-pogoji-november2025spar.pdf",
+            "date": "2025-11",
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "activationNeeded": {
+        "answer": "neznano",
+        "text": "Pogoji opisujejo le skeniranje črtne kode kupona na blagajni; o aktivaciji v aplikaciji ne govorijo.",
+        "sources": [
+          {
+            "title": "Splošni pogoji poslovanja za imetnike SPAR plus kartice",
+            "url": "https://www.spar.si/content/dam/sparsiwebsite/spar-plus/splosni-pogoji/splosni-pogoji-november2025spar.pdf",
+            "date": "2025-11",
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "cardLinking": [
+        {
+          "text": "Kartica je plastična ali elektronska (e-kartica v aplikaciji SPAR plus). Fizično kartico dobiš le ob včlanitvi v poslovalnici.",
+          "sources": [
+            {
+              "title": "Splošni pogoji poslovanja za imetnike SPAR plus kartice",
+              "url": "https://www.spar.si/content/dam/sparsiwebsite/spar-plus/splosni-pogoji/splosni-pogoji-november2025spar.pdf",
+              "date": "2025-11",
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Nadomestna kartica se izda istemu imetniku; neporabljeno dobroimetje se prenese nanjo v 15 dneh.",
+          "sources": [
+            {
+              "title": "Splošni pogoji poslovanja za imetnike SPAR plus kartice",
+              "url": "https://www.spar.si/content/dam/sparsiwebsite/spar-plus/splosni-pogoji/splosni-pogoji-november2025spar.pdf",
+              "date": "2025-11",
+              "accessed": "2026-10-14"
+            }
+          ]
+        }
+      ],
+      "forCouple": [
+        {
+          "text": "Vsak naj ima svojo e-kartico v aplikaciji, ker so ponudbe prilagojene nakupnim navadam imetnika.",
+          "sources": [
+            {
+              "title": "Splošni pogoji poslovanja za imetnike SPAR plus kartice",
+              "url": "https://www.spar.si/content/dam/sparsiwebsite/spar-plus/splosni-pogoji/splosni-pogoji-november2025spar.pdf",
+              "date": "2025-11",
+              "accessed": "2026-10-14"
+            }
+          ],
+          "advice": true
+        }
+      ],
+      "storesInRegion": {
+        "answer": "neznano",
+        "text": "Seznama trgovin na spar.si ni bilo mogoče samodejno preveriti (stran zavrača robote). Preveri ga v aplikaciji ali na spar.si.",
+        "sources": [
+          {
+            "title": "SPAR Slovenija",
+            "url": "https://www.spar.si/",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "links": {
+        "ios": "https://apps.apple.com/si/app/spar-plus/id491909828",
+        "android": "https://play.google.com/store/apps/details?id=plus.spar.si",
+        "web": "https://www.spar.si/"
+      }
+    },
+    {
+      "id": "dm",
+      "chain": "other",
+      "appName": "Moj dm",
+      "program": "dm active beauty",
+      "installPriority": 5,
+      "recommendation": "Če kupujeta drogerijo v dm",
+      "summary": "Točke active beauty (1 točka = 1 cent) in mesečni kuponi z večkratnimi točkami. dm v Akcije SI ni vključen, a ima prodajalne v regiji.",
+      "benefits": [
+        {
+          "text": "Ko zbereš vsaj 200 točk, jih unovčiš; ena točka je vredna en cent (1000 točk = 10 €). Unovčiš jih v prodajalni (z aplikacijo Moj dm), v spletni trgovini ali v aplikaciji.",
+          "sources": [
+            {
+              "title": "dm – unovčevanje točk",
+              "url": "https://www.dm.si/services/program-za-stranke/activebeauty/unovcevanje-tock",
+              "date": null,
+              "accessed": "2026-10-14"
+            },
+            {
+              "title": "dm – active beauty",
+              "url": "https://www.dm.si/services/program-za-stranke/activebeauty",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Spletni kuponi z večkratnimi točkami veljajo za vse izdelke v kategoriji; pred nakupom jih aktiviraš na payback.si ali v aplikaciji. Ponudba se menja vsak mesec.",
+          "sources": [
+            {
+              "title": "dm – active beauty program zvestobe",
+              "url": "https://www.dm.si/services/program-za-stranke/activebeauty/program-zvestobe-978820",
+              "date": "2026-09-25",
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Aktiviran kupon velja za enkraten nakup največ 10 izdelkov. Za kupone moraš ob registraciji dati soglasje za oglaševanje. Točk ne dobiš za darilne kartice in začetne mlečne formule.",
+          "sources": [
+            {
+              "title": "dm – active beauty",
+              "url": "https://www.dm.si/services/program-za-stranke/activebeauty",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Aplikacija Moj dm: vsi kuponi na enem mestu, preverjanje zaloge v prodajalnah, hitri prevzem.",
+          "sources": [
+            {
+              "title": "dm – aplikacija Moj dm",
+              "url": "https://www.dm.si/services/program-za-stranke/moj-dm-aplikacija",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        }
+      ],
+      "personalCoupons": {
+        "answer": "neznano",
+        "text": "Kuponi so mesečni in veljajo za kategorije; o osebnih kuponih stran ne govori.",
+        "sources": [
+          {
+            "title": "dm – active beauty program zvestobe",
+            "url": "https://www.dm.si/services/program-za-stranke/activebeauty/program-zvestobe-978820",
+            "date": "2026-09-25",
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "activationNeeded": {
+        "answer": "da",
+        "text": "Kupone z večkratnimi točkami moraš pred nakupom aktivirati.",
+        "sources": [
+          {
+            "title": "dm – active beauty program zvestobe",
+            "url": "https://www.dm.si/services/program-za-stranke/activebeauty/program-zvestobe-978820",
+            "date": "2026-09-25",
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "cardLinking": [
+        {
+          "text": "Kartico active beauty dobiš v prodajalni dm ali jo naročiš na spletu; profil spletne trgovine povežeš s številko kartice.",
+          "sources": [
+            {
+              "title": "dm – active beauty",
+              "url": "https://www.dm.si/services/program-za-stranke/activebeauty",
+              "date": null,
+              "accessed": "2026-10-14"
+            },
+            {
+              "title": "dm – active beauty program zvestobe",
+              "url": "https://www.dm.si/services/program-za-stranke/activebeauty/program-zvestobe-978820",
+              "date": "2026-09-25",
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Če imaš registriranih več kartic, kupone aktiviraš na vsaki posebej; veljajo le s kartico, na kateri so aktivirani.",
+          "sources": [
+            {
+              "title": "dm – active beauty",
+              "url": "https://www.dm.si/services/program-za-stranke/activebeauty",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        }
+      ],
+      "forCouple": [
+        {
+          "text": "Kupone aktivirajta na kartici, ki jo bosta pokazala na blagajni; aktivacija velja samo za tisto kartico.",
+          "sources": [
+            {
+              "title": "dm – active beauty",
+              "url": "https://www.dm.si/services/program-za-stranke/activebeauty",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ],
+          "advice": true
+        }
+      ],
+      "storesInRegion": {
+        "answer": "delno",
+        "text": "Prodajalne: Sežana (Cesta na Lenivec 5), Koper (2), Ajdovščina (Mirce 8), Ljubljana.",
+        "sources": [
+          {
+            "title": "dm – seznam prodajaln (sitemap)",
+            "url": "https://www.dm.si/store-sitemap.xml",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "links": {
+        "ios": "https://apps.apple.com/app/mein-dm/id1186271926",
+        "android": "https://play.google.com/store/apps/details?id=de.dm.meindm.android",
+        "web": "https://www.dm.si/services/program-za-stranke/activebeauty"
+      }
+    },
+    {
+      "id": "hofer",
+      "chain": "hofer",
+      "appName": "HOFER",
+      "program": null,
+      "installPriority": 6,
+      "recommendation": "Neobvezno",
+      "summary": "Ponudba, opomniki, nakupovalni seznam in preverjanje zaloge. Akcije Hoferja so že v Akcije SI.",
+      "benefits": [
+        {
+          "text": "Brezplačna aplikacija: celotna ponudba, opomnik za zanimive izdelke, nakupovalni seznam, preverjanje zaloge posebne ponudbe v trgovinah, iskalnik trgovin.",
+          "sources": [
+            {
+              "title": "HOFER aplikacija",
+              "url": "https://www.hofer.si/storitve/hofer-aplikacija",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Preverjanje zaloge je uporabno pri neživilih (tedenska posebna ponudba).",
+          "sources": [
+            {
+              "title": "HOFER aplikacija",
+              "url": "https://www.hofer.si/storitve/hofer-aplikacija",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ],
+          "advice": true
+        }
+      ],
+      "personalCoupons": {
+        "answer": "neznano",
+        "text": "Uradna stran aplikacije kuponov ali kartice zvestobe ne omenja.",
+        "sources": [
+          {
+            "title": "HOFER aplikacija",
+            "url": "https://www.hofer.si/storitve/hofer-aplikacija",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "activationNeeded": {
+        "answer": "ne",
+        "text": "Uradna stran aplikacije ne omenja kuponov, ki bi jih bilo treba aktivirati.",
+        "sources": [
+          {
+            "title": "HOFER aplikacija",
+            "url": "https://www.hofer.si/storitve/hofer-aplikacija",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "cardLinking": [],
+      "forCouple": [],
+      "storesInRegion": {
+        "answer": "delno",
+        "text": "Trgovine: Sežana (Partizanska cesta 71c), Koper, Ajdovščina, Ljubljana.",
+        "sources": [
+          {
+            "title": "HOFER – seznam trgovin (sitemap)",
+            "url": "https://www.hofer.si/sitemap_stores.xml",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "links": {
+        "ios": "https://apps.apple.com/si/app/ve%C4%8D-kot-fer-hofer/id403212198",
+        "android": "https://play.google.com/store/apps/details?id=de.apptiv.business.android.aldi_si",
+        "web": "https://www.hofer.si/storitve/hofer-aplikacija"
+      }
+    },
+    {
+      "id": "eurospin",
+      "chain": "eurospin",
+      "appName": null,
+      "program": null,
+      "installPriority": 7,
+      "recommendation": "Ni potrebno",
+      "summary": "Programa zvestobe na eurospin.si nismo našli. Akcije Eurospina so že v Akcije SI.",
+      "benefits": [],
+      "personalCoupons": {
+        "answer": "neznano",
+        "text": "Na eurospin.si nismo našli kuponov ali kartice zvestobe.",
+        "sources": [
+          {
+            "title": "Eurospin Slovenija",
+            "url": "https://www.eurospin.si/",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "activationNeeded": {
+        "answer": "neznano",
+        "text": "Na eurospin.si nismo našli kuponov.",
+        "sources": [
+          {
+            "title": "Eurospin Slovenija",
+            "url": "https://www.eurospin.si/",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "cardLinking": [],
+      "forCouple": [],
+      "storesInRegion": {
+        "answer": "delno",
+        "text": "Prodajna mesta: Kozina (Bazoviška cesta 17), Sežana, Koper, Ajdovščina, Ljubljana.",
+        "sources": [
+          {
+            "title": "Eurospin – prodajna mesta",
+            "url": "https://www.eurospin.si/prodajna-mesta/",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "links": {
+        "ios": null,
+        "android": null,
+        "web": "https://www.eurospin.si/"
+      }
+    },
+    {
+      "id": "obi",
+      "chain": "obi",
+      "appName": null,
+      "program": null,
+      "installPriority": 8,
+      "recommendation": "Ni potrebno",
+      "summary": "Programa zvestobe na obi.si nismo našli; stran o kartičnem poslovanju govori le o plačilnih karticah. Akcije OBI so že v Akcije SI (sekcija Dom in vrt).",
+      "benefits": [],
+      "personalCoupons": {
+        "answer": "neznano",
+        "text": "Na obi.si nismo našli kuponov ali kartice zvestobe.",
+        "sources": [
+          {
+            "title": "OBI – kartično poslovanje",
+            "url": "https://www.obi.si/navigacija/vse-storitve/karticno-poslovanje",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "activationNeeded": {
+        "answer": "neznano",
+        "text": "Na obi.si nismo našli kuponov.",
+        "sources": [
+          {
+            "title": "OBI – kartično poslovanje",
+            "url": "https://www.obi.si/navigacija/vse-storitve/karticno-poslovanje",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "cardLinking": [],
+      "forCouple": [],
+      "storesInRegion": {
+        "answer": "delno",
+        "text": "Trgovini v regiji: Koper in Ljubljana.",
+        "sources": [
+          {
+            "title": "OBI – seznam trgovin",
+            "url": "https://www.obi.si/storelist",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "links": {
+        "ios": null,
+        "android": null,
+        "web": "https://www.obi.si/"
+      }
+    }
+  ],
+  "loyaltyPrograms": [
+    {
+      "id": "lidl-plus",
+      "name": "Lidl Plus",
+      "chain": "lidl",
+      "rank": 1,
+      "worthIt": "da",
+      "why": "Brez stroškov, cene Lidl Plus in petkov Super bonus (10 % na nakup do 300 €) po tedenskem nakupu nad 25 €.",
+      "cost": {
+        "text": "Brez plačila: »S sodelovanjem v programu Lidl Plus se ne zavezujete k plačilu kakršnegakoli zneska.« V zameno posreduješ podatke o nakupih.",
+        "sources": [
+          {
+            "title": "Splošni pogoji sodelovanja v programu Lidl Plus (različica 2.3)",
+            "url": "https://www.lidl.si/c/informacije-lidl-plus-splosni-pogoji-uporabe/s10020644",
+            "date": "2026-07",
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "keyFacts": [
+        {
+          "text": "Super bonus: nakup nad 25 € v torek ali sredo → v petek kupon −10 % na celoten nakup.",
+          "sources": [
+            {
+              "title": "Lidl Plus – Super bonus",
+              "url": "https://www.lidl.si/c/lidl-plus-super-bonus/s10030494",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Del akcijskih cen velja samo z Lidl Plus.",
+          "sources": [
+            {
+              "title": "Lidl – Super ponudba od četrtka",
+              "url": "https://www.lidl.si/c/super-ponudba-od-cetrtka/a10104884",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tus-klub",
+      "name": "Tuš klub",
+      "chain": "tus",
+      "rank": 2,
+      "worthIt": "da",
+      "why": "Brezplačna kartica, izdelki Tuš klub −50 %, Mojih 10 (do −50 % več mesecev) in tedenski kuponi. Tuš ima trgovine tudi v Kozini in Divači.",
+      "cost": {
+        "text": "Brezplačno in brez obveznosti.",
+        "sources": [
+          {
+            "title": "Tuš klub – pogosta vprašanja in odgovori",
+            "url": "https://www.tus.si/tus-klub/pogosta-vprasanja-in-odgovori/",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "keyFacts": [
+        {
+          "text": "Mojih 10: 10 izbranih izdelkov do 50 % ugodneje, ponudba do 5. 1. 2027.",
+          "sources": [
+            {
+              "title": "Tuš – Mojih 10",
+              "url": "https://www.tus.si/aktualno/akcijska-ponudba/mojih-10/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Kupon −25 % za izdelek po izbiri, en kupon na nakup in kartico.",
+          "sources": [
+            {
+              "title": "Tuš – splošni pogoji kuponov",
+              "url": "https://www.tus.si/katalog/splosni-pogoji-kuponi/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mercator-pika",
+      "name": "Mercator Pika (modra) + Moj M",
+      "chain": "mercator",
+      "rank": 3,
+      "worthIt": "da",
+      "why": "Pika cene in Pika ugodnosti (npr. 25 % na izbrani izdelek ali 10 % na nakup) dobiš že s kartico. Pike se splačajo, če v treh mesecih zbereta vsaj 600 pik (≈ 600 € nakupov za 20 €).",
+      "cost": {
+        "text": "V splošnih določilih članarina za modro bonitetno kartico ni navedena; dobi jo oseba, starejša od 15 let.",
+        "sources": [
+          {
+            "title": "Splošna določila za izdajanje in uporabo bonitetne oziroma plačilno-kreditne Pika kartice",
+            "url": "https://www.mercator.si/assets/Uploads/file-module/Splosna-dolocila-za-izdajanje-in-uporabo-bonitetne-oziroma-placilno-kreditne-Pika-kartice-februar-2026.pdf",
+            "date": "2026-02",
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "keyFacts": [
+        {
+          "text": "600 pik = 20 €, 1800 pik = 100 €, 3600 pik = 200 €; obdobje traja 3 mesece.",
+          "sources": [
+            {
+              "title": "Mercator – Pika bonitetni sistem",
+              "url": "https://www.mercator.si/pika/bonitetni-sistem/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        },
+        {
+          "text": "Pike se seštevajo med karticami istega računa.",
+          "sources": [
+            {
+              "title": "Mercator – Pika bonitetni sistem",
+              "url": "https://www.mercator.si/pika/bonitetni-sistem/",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spar-plus",
+      "name": "SPAR plus",
+      "chain": "spar",
+      "rank": 4,
+      "worthIt": "da",
+      "why": "Popusti in kuponi za člane ter ponudbe po meri. Smiselno, če vsaj občasno nakupujeta v Sparu ali Intersparu.",
+      "cost": {
+        "text": "V splošnih pogojih članarina ni navedena; e-kartica in obvestila so za imetnika brezplačna.",
+        "sources": [
+          {
+            "title": "Splošni pogoji poslovanja za imetnike SPAR plus kartice",
+            "url": "https://www.spar.si/content/dam/sparsiwebsite/spar-plus/splosni-pogoji/splosni-pogoji-november2025spar.pdf",
+            "date": "2025-11",
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "keyFacts": [
+        {
+          "text": "Posebne ponudbe, prilagojene nakupnim navadam; kuponi s črtno kodo.",
+          "sources": [
+            {
+              "title": "Splošni pogoji poslovanja za imetnike SPAR plus kartice",
+              "url": "https://www.spar.si/content/dam/sparsiwebsite/spar-plus/splosni-pogoji/splosni-pogoji-november2025spar.pdf",
+              "date": "2025-11",
+              "accessed": "2026-10-14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dm-active-beauty",
+      "name": "dm active beauty",
+      "chain": "other",
+      "rank": 5,
+      "worthIt": "morda",
+      "why": "Splača se, če drogerijo kupujeta v dm: 1 točka = 1 cent, mesečni kuponi pomnožijo točke. dm ima prodajalne v Sežani, Kopru in Ajdovščini.",
+      "cost": {
+        "text": "Kartico dobiš v prodajalni dm ali jo naročiš na spletu; za kupone je potrebno soglasje za oglaševanje.",
+        "sources": [
+          {
+            "title": "dm – active beauty",
+            "url": "https://www.dm.si/services/program-za-stranke/activebeauty",
+            "date": null,
+            "accessed": "2026-10-14"
+          }
+        ]
+      },
+      "keyFacts": [
+        {
+          "text": "Unovčiš od 200 točk naprej; 1000 točk = 10 €.",
+          "sources": [
+            {
+              "title": "dm – unovčevanje točk",
+              "url": "https://www.dm.si/services/program-za-stranke/activebeauty/unovcevanje-tock",
+              "date": null,
+              "accessed": "2026-10-14"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "coupleTips": [
+    {
+      "text": "Vsak od vaju naj ima svoje kartice in račune; kuponi so večinoma vezani na eno kartico in en nakup (Lidl: en Super bonus na kupca na teden; Tuš: ena oseba ne sme zaporedoma nakupovati z več karticami; dm: kupon velja le na kartici, kjer je aktiviran).",
+      "sources": [
+        {
+          "title": "Lidl Plus – Super bonus",
+          "url": "https://www.lidl.si/c/lidl-plus-super-bonus/s10030494",
+          "date": null,
+          "accessed": "2026-10-14"
+        },
+        {
+          "title": "Tuš – splošni pogoji kuponov",
+          "url": "https://www.tus.si/katalog/splosni-pogoji-kuponi/",
+          "date": null,
+          "accessed": "2026-10-14"
+        },
+        {
+          "title": "dm – active beauty",
+          "url": "https://www.dm.si/services/program-za-stranke/activebeauty",
+          "date": null,
+          "accessed": "2026-10-14"
+        }
+      ],
+      "advice": true
+    },
+    {
+      "text": "Mercator: pri skupnih nakupih vedno pokažita isto Pika kartico, da hitreje dosežeta prag 600 pik, preden pike po treh mesecih zapadejo.",
+      "sources": [
+        {
+          "title": "Mercator – Pika bonitetni sistem",
+          "url": "https://www.mercator.si/pika/bonitetni-sistem/",
+          "date": null,
+          "accessed": "2026-10-14"
+        }
+      ],
+      "advice": true
+    },
+    {
+      "text": "Tuš Mojih 10: z dvema karticama lahko izbereta različne izdelke in tako pokrijeta več stvari, ki jih redno kupujeta.",
+      "sources": [
+        {
+          "title": "Tuš klub – pogosta vprašanja in odgovori",
+          "url": "https://www.tus.si/tus-klub/pogosta-vprasanja-in-odgovori/",
+          "date": null,
+          "accessed": "2026-10-14"
+        }
+      ],
+      "advice": true
+    },
+    {
+      "text": "Lidl Super bonus: velik tedenski nakup naj gre na torek ali sredo, manjši dokup pa na petek s kuponom −10 %.",
+      "sources": [
+        {
+          "title": "Lidl Plus – Super bonus",
+          "url": "https://www.lidl.si/c/lidl-plus-super-bonus/s10030494",
+          "date": null,
+          "accessed": "2026-10-14"
+        }
+      ],
+      "advice": true
+    }
+  ],
+  "disclaimer": "Pravila programov se spreminjajo; podatki so bili preverjeni na uradnih straneh trgovcev 14. 10. 2026. Müller ni vključen, ker njegove spletne strani ni bilo mogoče samodejno preveriti. Pred nakupom preveri pogoje v aplikaciji trgovca."
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Zgradi aplikacijo za simulator in posname zaslone na najnovejšem iPhonu in iPadu Pro 13".
+# Zgradi aplikacijo za simulator in posname zaslone na najnovejšem iPhonu (simctl) in iPadu Pro 13" (UI test).
 set -euo pipefail
 cd "$(dirname "$0")/.."
 OUT="${1:-screenshots}"
@@ -48,9 +48,19 @@ xcrun simctl ui "$IPHONE" appearance dark
 shoot "$IPHONE" iphone-7-temni-nacin.png -section highlights
 
 prepare "$IPAD"
+# iPad: UI test zasuka simulator (ležeče/pokončno) in sam shrani posnetke v $OUT.
+ABS_OUT=$(cd "$OUT" && pwd)
+DEST="platform=iOS Simulator,id=$IPAD"
+xcodebuild build-for-testing -project AkcijeSI.xcodeproj -scheme Posnetki -destination "$DEST" \
+  -derivedDataPath build CODE_SIGNING_ALLOWED=NO -quiet
+uitest() { # $1 testna metoda
+  TEST_RUNNER_SHOTS_DIR="$ABS_OUT" xcodebuild test-without-building -project AkcijeSI.xcodeproj \
+    -scheme Posnetki -destination "$DEST" -derivedDataPath build CODE_SIGNING_ALLOWED=NO \
+    -only-testing:"AkcijeSIUITests/ScreenshotTests/$1" -quiet \
+    || echo "::warning::UI test $1 ni uspel – posnetki iPada so lahko nepopolni"
+}
 xcrun simctl ui "$IPAD" appearance light
-shoot "$IPAD" ipad-1-lezece-izpostavljeno.png -section highlights -selectFirst -landscape
-shoot "$IPAD" ipad-2-lezece-kategorija.png -section categories -landscape
-shoot "$IPAD" ipad-3-pokoncno.png -section highlights -selectFirst -portrait
+uitest testIPadLight
 xcrun simctl ui "$IPAD" appearance dark
-shoot "$IPAD" ipad-4-temni-nacin.png -section highlights -selectFirst -landscape
+uitest testIPadDark
+ls -1 "$OUT"

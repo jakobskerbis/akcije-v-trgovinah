@@ -25,6 +25,8 @@ struct ChainTag: View {
     var body: some View {
         Text(store.chainName(chain))
             .font(.caption.weight(.semibold))
+            .lineLimit(1)
+            .fixedSize()
             .foregroundStyle(.white)
             .padding(.horizontal, 6)
             .padding(.vertical, 2)
@@ -40,6 +42,8 @@ struct DiscountBadge: View {
         Text("−\(pct) %")
             .font(.subheadline.weight(.heavy))
             .monospacedDigit()
+            .lineLimit(1)
+            .fixedSize()
             .foregroundStyle(.white)
             .padding(.horizontal, 7)
             .padding(.vertical, 3)
@@ -80,26 +84,39 @@ struct DaysLeftLabel: View {
 struct PriceBlock: View {
     let offer: Offer
     var large = true
+    /// Ozek stolpec ob desnem robu vrstice: redna cena in cena na enoto vsaka v svoji vrstici.
+    var trailing = false
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack(alignment: trailing ? .trailing : .leading, spacing: 0) {
             Text(Format.price(offer.price))
                 .font(large ? .title2.weight(.bold) : .headline.weight(.bold))
                 .monospacedDigit()
+                .lineLimit(1)
                 .minimumScaleFactor(0.7)
-            HStack(spacing: 6) {
-                if let r = offer.regularPrice {
-                    Text(Format.price(r))
-                        .strikethrough()
-                        .foregroundStyle(.secondary)
-                        .accessibilityLabel("Redna cena \(Format.price(r))")
-                }
-                if let up = Format.unitPrice(offer) {
-                    Text(up).foregroundStyle(.secondary)
+            Group {
+                if trailing {
+                    VStack(alignment: .trailing, spacing: 0) { details }
+                } else {
+                    HStack(spacing: 6) { details }
                 }
             }
             .font(.caption)
             .monospacedDigit()
+            .lineLimit(1)
+            .minimumScaleFactor(0.8)
+        }
+    }
+
+    @ViewBuilder private var details: some View {
+        if let r = offer.regularPrice {
+            Text(Format.price(r))
+                .strikethrough()
+                .foregroundStyle(.secondary)
+                .accessibilityLabel("Redna cena \(Format.price(r))")
+        }
+        if let up = Format.unitPrice(offer) {
+            Text(up).foregroundStyle(.secondary)
         }
     }
 }
@@ -162,9 +179,8 @@ struct OfferRow: View {
                 }
             }
             Spacer(minLength: 4)
-            PriceBlock(offer: offer, large: true)
-                .multilineTextAlignment(.trailing)
-                .frame(minWidth: 80, alignment: .trailing)
+            PriceBlock(offer: offer, large: true, trailing: true)
+                .fixedSize()
         }
         .padding(.vertical, 4)
         .contentShape(Rectangle())

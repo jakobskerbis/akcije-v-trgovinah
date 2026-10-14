@@ -9,6 +9,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
 
+import '../logic/matching.dart';
 import '../models/feed.dart';
 import '../models/shared_doc.dart';
 
@@ -37,7 +38,7 @@ class ListsStore extends ChangeNotifier {
 
   List<SharedWatch> get watch => doc.watch.where((w) => !w.deleted).toList();
   List<SharedShopping> get shopping => doc.shopping.where((s) => !s.deleted).toList();
-  List<String> get watchTerms => watch.map((w) => w.term).toList();
+  List<WatchTerm> get watchTerms => watch.map((w) => WatchTerm(w.term, w.category)).toList();
 
   Future<File> _file() async {
     final base = await getApplicationSupportDirectory();
@@ -256,8 +257,10 @@ class ListsStore extends ChangeNotifier {
   /// Za demo način in posnetke zaslona.
   void seedDemo(List<Offer> offers) {
     final now = sharedNow();
+    final pool = offers.map((o) => (name: o.name, category: o.category));
     for (final (t, by) in [('piščančje prsi', 'Jakob'), ('mleko', 'Partnerka'), ('losos', 'Partnerka'), ('kava', 'Jakob')]) {
-      doc.watch.add(SharedWatch(id: _uuid.v4(), term: t, createdAt: now, updatedAt: now, by: by));
+      doc.watch.add(SharedWatch(
+          id: _uuid.v4(), term: t, category: inferCategory(t, pool), createdAt: now, updatedAt: now, by: by));
     }
     var i = 0;
     for (final o in offers.where((o) => (o.discountPct ?? 0) >= 30).take(4)) {

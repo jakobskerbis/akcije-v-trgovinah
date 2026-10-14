@@ -54,7 +54,7 @@ class Notifications {
     } catch (_) {}
   }
 
-  static Future<void> notifyNew(AppStore store, List<String> watchTerms) async {
+  static Future<void> notifyNew(AppStore store, List<WatchTerm> watchTerms) async {
     await init();
     final p = await SharedPreferences.getInstance();
     final notifyWatch = p.getBool('notifyWatch') ?? true;
@@ -72,8 +72,8 @@ class Notifications {
       String? term;
       if (notifyWatch) {
         for (final t in watchTerms) {
-          if (matchesTerm(t, o.name)) {
-            term = t;
+          if (matchesWatch(t, o.name, o.category)) {
+            term = t.term;
             break;
           }
         }

@@ -21,11 +21,13 @@ struct PadRootView: View {
                         Button { ui.showSettings = true } label: { Label("Nastavitve", systemImage: "gearshape") }
                     }
                 }
+                .navigationSplitViewColumnWidth(min: 220, ideal: 270, max: 320)
         } content: {
             NavigationStack {
                 content
                     .withAppDestinations()
             }
+            .navigationSplitViewColumnWidth(min: 380, ideal: 600, max: 900)
         } detail: {
             NavigationStack {
                 if let o = ui.selectedOffer {
@@ -39,6 +41,11 @@ struct PadRootView: View {
             }
         }
         .navigationSplitViewStyle(.balanced)
+        // Pokončno (ali ozko okno) so trije stolpci pretesni: stranska vrstica se skrije in je
+        // dosegljiva z gumbom v orodni vrstici.
+        .onGeometryChange(for: Bool.self) { $0.size.width >= 1180 } action: { wide in
+            visibility = wide ? .all : .doubleColumn
+        }
         .onChange(of: ui.section) { _, s in ui.sidebar = SidebarItem(section: s) }
         .sensoryFeedback(.success, trigger: dropTick)
     }
@@ -104,7 +111,7 @@ struct PadRootView: View {
     }
 }
 
-/// Prilagodljiva mreža (3–5 stolpcev glede na širino).
+/// Prilagodljiva mreža (3–5 stolpcev glede na širino; v zelo ozkem oknu 2).
 struct OfferGridScreen: View {
     @Environment(AppStore.self) private var store
     @Environment(UIState.self) private var ui
@@ -118,11 +125,11 @@ struct OfferGridScreen: View {
 
     var body: some View {
         @Bindable var ui = ui
-        let terms = watch.map(\.term)
+        let terms = watch.map { WatchTerm(term: $0.term, category: $0.category) }
         let effective: BrowseScope = ui.search.isEmpty ? scope : (scope == .highlights ? .all : scope)
         let groups = Browse.groups(scope: effective, store: store, ui: ui, watchTerms: terms, threshold: threshold)
         GeometryReader { geo in
-            let cols = max(3, min(5, Int(geo.size.width / 210)))
+            let cols = max(2, min(5, Int((geo.size.width - 32 + 12) / (170 + 12))))
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     if case .highlights = scope { StoreSectionPicker().frame(maxWidth: 420) }

@@ -17,11 +17,11 @@ class OfferGroup {
   OfferGroup(this.id, this.title, this.icon, this.offers);
 }
 
-List<OfferGroup> groupsFor(BrowseScope scope, AppStore store, UiState ui, List<String> terms) {
+List<OfferGroup> groupsFor(BrowseScope scope, AppStore store, UiState ui, List<WatchTerm> terms) {
   final base = store.visible(ui.filter, ui.search);
   switch (scope) {
     case HighlightsScope():
-      final watch = base.where((o) => terms.any((t) => matchesTerm(t, o.name))).toList();
+      final watch = base.where((o) => terms.any((t) => matchesWatch(t, o.name, o.category))).toList();
       final best = base.where((o) => o.bestUnitPrice).toList();
       final disc = base.where((o) => (o.discountPct ?? 0) >= ui.threshold).toList();
       return [
@@ -41,10 +41,11 @@ List<OfferGroup> groupsFor(BrowseScope scope, AppStore store, UiState ui, List<S
       ];
     case ChainScope(:final id):
       return [OfferGroup('chain', store.chainName(id), Icons.store, sortOffers(base.where((o) => o.chain == id), ui.sort))];
-    case WatchScope(:final term):
+    case WatchScope(:final term, :final category):
+      final w = WatchTerm(term, category);
       return [
         OfferGroup('w', term, Icons.visibility,
-            sortOffers(store.offers.where((o) => !o.isExpired() && matchesTerm(term, o.name)), SortOrder.unitPrice))
+            sortOffers(store.offers.where((o) => !o.isExpired() && matchesWatch(w, o.name, o.category)), SortOrder.unitPrice))
       ];
   }
 }

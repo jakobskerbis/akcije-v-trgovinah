@@ -23,6 +23,18 @@ void main() {
     });
   });
 
+  test('kategorija opazovanega živila izloči mleko za čiščenje', () {
+    final pool = [
+      (name: 'Alpsko mleko, 1 l', category: 'mlecni' as String?),
+      (name: 'Pomursko mleko 3,5%', category: 'mlecni' as String?),
+      (name: 'CIEN Mleko za čiščenje', category: 'drogerija' as String?),
+    ];
+    final cat = inferCategory('mleko', pool);
+    expect(cat, 'mlecni');
+    final w = WatchTerm('mleko', cat);
+    expect(pool.where((o) => matchesWatch(w, o.name, o.category)).length, 2);
+  });
+
   group('skupni dokument', () {
     test('zmaga novejši zapis, tudi z mikrosekundami iz Darta', () {
       final old = SharedWatch(

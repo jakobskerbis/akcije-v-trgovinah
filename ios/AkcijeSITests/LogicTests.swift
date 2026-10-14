@@ -54,3 +54,21 @@ final class LogicTests: XCTestCase {
         XCTAssertEqual(c.type, .none)
     }
 }
+
+final class WatchCategoryTests: XCTestCase {
+    private func offer(_ id: String, _ name: String, _ cat: String) -> Offer {
+        Offer(id: id, productKey: nil, chain: "tus", name: name, brand: nil, category: cat, kind: nil, packSize: nil,
+              price: 1, regularPrice: nil, discountPct: nil, unitPrice: nil, unit: nil, bestUnitPrice: nil,
+              validFrom: nil, validTo: nil, condition: OfferCondition(type: .none, description: nil), ean: nil,
+              sourceUrl: nil, imageUrl: nil, fetchedAt: nil, stale: nil)
+    }
+
+    func testInferredCategoryExcludesCleansingMilk() {
+        let offers = [offer("1", "Alpsko mleko, 1 l", "mlecni"), offer("2", "Pomursko mleko 3,5%", "mlecni"),
+                      offer("3", "CIEN Mleko za čiščenje", "drogerija")]
+        let cat = Matching.inferCategory(term: "mleko", offers: offers)
+        XCTAssertEqual(cat, "mlecni")
+        let w = WatchTerm(term: "mleko", category: cat)
+        XCTAssertEqual(offers.filter { Matching.matches(w, offer: $0) }.map(\.id), ["1", "2"])
+    }
+}

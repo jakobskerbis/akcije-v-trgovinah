@@ -38,6 +38,19 @@ targets:
       base:
         GENERATE_INFOPLIST_FILE: YES
         PRODUCT_BUNDLE_IDENTIFIER: com.jakobskerbis.akcijesi.tests
+  AkcijeSIUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: AkcijeSIUITests
+    dependencies:
+      - target: AkcijeSI
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.jakobskerbis.akcijesi.uitests
+        TEST_TARGET_NAME: AkcijeSI
+        TARGETED_DEVICE_FAMILY: "1,2"
 schemes:
   AkcijeSI:
     build:
@@ -47,3 +60,12 @@ schemes:
     test:
       targets:
         - AkcijeSITests
+  # Zaslonski posnetki iPada (UI test zasuka simulator; simctl tega ne zna).
+  Posnetki:
+    build:
+      targets:
+        AkcijeSI: all
+        AkcijeSIUITests: [test]
+    test:
+      targets:
+        - AkcijeSIUITests

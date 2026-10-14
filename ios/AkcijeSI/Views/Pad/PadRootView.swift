@@ -183,9 +183,10 @@ struct OfferGridScreen: View {
             }
         }
         .sensoryFeedback(.success, trigger: addedTick)
-        .onAppear {
-            if ProcessInfo.processInfo.arguments.contains("-selectFirst"), ui.selectedOffer == nil {
-                ui.selectedOffer = groups.first(where: { !$0.offers.isEmpty })?.offers.first
+        // Podatki se naložijo po prvem prikazu, zato ob spremembi in ne v onAppear.
+        .onChange(of: groups.first(where: { !$0.offers.isEmpty })?.offers.first?.id, initial: true) { _, first in
+            if ProcessInfo.processInfo.arguments.contains("-selectFirst"), ui.selectedOffer == nil, let first {
+                ui.selectedOffer = store.offer(id: first)
             }
         }
     }

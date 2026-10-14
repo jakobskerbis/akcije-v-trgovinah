@@ -94,7 +94,7 @@ enum Format {
         case ..<0: return "poteklo"
         case 0: return "še danes"
         case 1: return "še 1 dan"
-        case 2: return "še 2 dni"
+        case 2: return "še 2 dneva"
         case 3, 4: return "še \(d) dni"
         default: return "še \(d) dni"
         }

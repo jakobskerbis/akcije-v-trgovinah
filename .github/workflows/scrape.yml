@@ -25,6 +25,8 @@ jobs:
   zajem:
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    outputs:
+      pages: ${{ steps.pages.outputs.enabled }}
     steps:
       - uses: actions/checkout@v5
 
@@ -72,12 +74,31 @@ jobs:
           git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" data:data
           rm -rf .git
 
+      # Brez vklopljenega Pages (Settings → Pages → Source: GitHub Actions) objava ne uspe;
+      # namesto rdečega teka vsakih 6 ur je to opozorilo, aplikacije pa berejo vejo data.
+      - name: Ali je GitHub Pages vklopljen?
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          bt=$(gh api "repos/${{ github.repository }}/pages" --jq .build_type 2>/dev/null || true)
+          if [ "$bt" = "workflow" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            msg="GitHub Pages ni vklopljen z virom GitHub Actions (Settings → Pages → Source: GitHub Actions). Aplikacije zato berejo podatke iz veje data."
+            echo "::warning::$msg"
+            echo "> ⚠️ $msg" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
       - uses: actions/upload-pages-artifact@v4
+        if: steps.pages.outputs.enabled == 'true'
         with:
           path: public
 
   objava:
     needs: zajem
+    if: needs.zajem.outputs.pages == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

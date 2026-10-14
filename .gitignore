@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+/public/
+/prev/
+.DS_Store
+# Xcode
+ios/build/
+ios/*.xcodeproj/xcuserdata/
+ios/*.xcodeproj/project.xcworkspace/xcuserdata/
+DerivedData/
+# Flutter
+flutter_app/.dart_tool/
+flutter_app/build/
+flutter_app/.flutter-plugins
+flutter_app/.flutter-plugins-dependencies
+flutter_app/.idea/
+flutter_app/android/.gradle/
+flutter_app/android/local.properties
+flutter_app/android/app/.cxx/
+flutter_app/windows/flutter/ephemeral/

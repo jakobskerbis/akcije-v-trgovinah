@@ -1,0 +1,87 @@
+name: Zajem akcij
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"   # vsakih 6 ur (UTC), ob :17 da se izognemo konicam ob polni uri
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scraper/**"
+      - "data/guide.json"
+      - "web/**"
+      - ".github/workflows/scrape.yml"
+
+permissions:
+  contents: write   # potisk v vejo "data"
+  pages: write
+  id-token: write
+
+concurrency:
+  group: zajem
+  cancel-in-progress: false
+
+jobs:
+  zajem:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scraper/requirements.txt
+
+      - name: Namestitev
+        run: pip install -r scraper/requirements.txt
+
+      - name: Testi
+        working-directory: scraper
+        run: python -m pytest -q
+
+      - name: Prejšnji zajem (zgodovina cen)
+        run: |
+          mkdir -p prev
+          if git fetch --depth=1 origin data:refs/remotes/origin/data 2>/dev/null; then
+            git --work-tree=prev checkout origin/data -- . || true
+          fi
+          ls -la prev
+
+      - name: Zajem vseh virov
+        working-directory: scraper
+        run: python -m akcije --out ../public --data ../prev --guide ../data/guide.json
+
+      - name: Poročilo
+        if: always()
+        run: |
+          if [ -f public/report.md ]; then cat public/report.md >> "$GITHUB_STEP_SUMMARY"; fi
+
+      - name: Statična stran
+        run: cp web/index.html public/index.html && touch public/.nojekyll
+
+      - name: Shrani v vejo data (en sam commit, brez rasti zgodovine)
+        run: |
+          cd public
+          git init -q -b data
+          git config user.name "akcije-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Zajem $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" data:data
+          rm -rf .git
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+
+  objava:
+    needs: zajem
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,49 @@
+name: AkcijeSI
+options:
+  bundleIdPrefix: com.jakobskerbis
+  deploymentTarget:
+    iOS: "18.0"
+  createIntermediateGroups: true
+  developmentLanguage: sl
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+targets:
+  AkcijeSI:
+    type: application
+    platform: iOS
+    sources:
+      - path: AkcijeSI
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jakobskerbis.akcijesi
+        TARGETED_DEVICE_FAMILY: "1,2"
+        INFOPLIST_FILE: AkcijeSI/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: YES
+        SUPPORTS_MACCATALYST: NO
+  AkcijeSITests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: AkcijeSITests
+    dependencies:
+      - target: AkcijeSI
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.jakobskerbis.akcijesi.tests
+schemes:
+  AkcijeSI:
+    build:
+      targets:
+        AkcijeSI: all
+        AkcijeSITests: [test]
+    test:
+      targets:
+        - AkcijeSITests

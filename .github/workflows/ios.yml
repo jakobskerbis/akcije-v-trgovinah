@@ -1,0 +1,88 @@
+name: iOS aplikacija
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "ios/**"
+      - ".github/workflows/ios.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ios-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Najnovejši Xcode
+        run: |
+          XC=$(ls -d /Applications/Xcode_*.app | grep -viE "beta|release_candidate|_rc" | sort -V | tail -1)
+          echo "Izbran: $XC"
+          sudo xcode-select -s "$XC"
+          xcodebuild -version
+          xcrun simctl list runtimes
+
+      - name: XcodeGen
+        run: |
+          brew install xcodegen
+          cd ios && xcodegen generate
+
+      - name: Unit testi
+        working-directory: ios
+        run: |
+          IFS='|' read -r NAME UDID <<<"$(python3 scripts/pick_simulators.py iphone)"
+          echo "Simulator: $NAME"
+          xcodebuild test -project AkcijeSI.xcodeproj -scheme AkcijeSI \
+            -destination "platform=iOS Simulator,id=$UDID" CODE_SIGNING_ALLOWED=NO -quiet
+
+      - name: Zaslonski posnetki (iPhone in iPad Pro 13")
+        working-directory: ios
+        run: ./scripts/screenshots.sh ../screenshots
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zaslonski-posnetki
+          path: screenshots
+
+      - name: Posnetki v vejo screenshots
+        run: |
+          cd screenshots
+          git init -q -b screenshots
+          git config user.name "akcije-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -q -m "Posnetki $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" screenshots:screenshots
+          rm -rf .git
+
+      - name: Nepodpisan .ipa (za Sideloadly)
+        working-directory: ios
+        run: |
+          xcodebuild build -project AkcijeSI.xcodeproj -scheme AkcijeSI -configuration Release \
+            -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath build-device \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" -quiet
+          mkdir -p Payload
+          cp -R build-device/Build/Products/Release-iphoneos/AkcijeSI.app Payload/
+          zip -qry AkcijeSI.ipa Payload
+          ls -la AkcijeSI.ipa
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AkcijeSI-ipa
+          path: ios/AkcijeSI.ipa
+
+      - name: Objava v Releases (ios-latest)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view ios-latest >/dev/null 2>&1 || \
+            gh release create ios-latest --prerelease --title "iOS/iPadOS – zadnja različica" \
+              --notes "Nepodpisan .ipa za namestitev s Sideloadly. Navodila v README."
+          gh release upload ios-latest ios/AkcijeSI.ipa --clobber

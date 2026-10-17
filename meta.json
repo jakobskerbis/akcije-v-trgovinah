@@ -1,0 +1,880 @@
+{
+ "schemaVersion": 1,
+ "generatedAt": "2026-10-17T22:43:05+02:00",
+ "discountThresholdDefault": 30,
+ "sources": [
+  {
+   "chain": "mercator",
+   "source": "mercatoronline.si (akcije)",
+   "url": "https://mercatoronline.si/brskaj/akcije",
+   "status": "ok",
+   "count": 3761,
+   "error": null,
+   "fetchedAt": "2026-10-17T22:39:36+02:00",
+   "durationMs": 59708,
+   "notes": []
+  },
+  {
+   "chain": "spar",
+   "source": "online.spar.si – Iz letaka",
+   "url": "https://online.spar.si/ca/aktualno/iz-letaka/S17/S17-1",
+   "status": "ok",
+   "count": 572,
+   "error": null,
+   "fetchedAt": "2026-10-17T22:39:36+02:00",
+   "durationMs": 20093,
+   "notes": []
+  },
+  {
+   "chain": "tus",
+   "source": "tus.si akcijska ponudba",
+   "url": "https://www.tus.si/aktualno/akcijska-ponudba/aktualno-iz-kataloga/",
+   "status": "ok",
+   "count": 600,
+   "error": null,
+   "fetchedAt": "2026-10-17T22:39:36+02:00",
+   "durationMs": 31362,
+   "notes": []
+  },
+  {
+   "chain": "hofer",
+   "source": "hofer.si posebna ponudba",
+   "url": "https://www.hofer.si/sl/ponudba.html",
+   "status": "ok",
+   "count": 163,
+   "error": null,
+   "fetchedAt": "2026-10-17T22:39:36+02:00",
+   "durationMs": 43938,
+   "notes": []
+  },
+  {
+   "chain": "lidl",
+   "source": "lidl.si super ponudba",
+   "url": "https://www.lidl.si",
+   "status": "ok",
+   "count": 155,
+   "error": null,
+   "fetchedAt": "2026-10-17T22:39:36+02:00",
+   "durationMs": 12974,
+   "notes": []
+  },
+  {
+   "chain": "eurospin",
+   "source": "eurospin.si/akcije",
+   "url": "https://www.eurospin.si/akcije/",
+   "status": "ok",
+   "count": 170,
+   "error": null,
+   "fetchedAt": "2026-10-17T22:39:36+02:00",
+   "durationMs": 1730,
+   "notes": []
+  },
+  {
+   "chain": "obi",
+   "source": "obi.si/c/akcija",
+   "url": "https://www.obi.si/c/akcija",
+   "status": "ok",
+   "count": 290,
+   "error": null,
+   "fetchedAt": "2026-10-17T22:39:36+02:00",
+   "durationMs": 39002,
+   "notes": []
+  }
+ ],
+ "chains": [
+  {
+   "id": "mercator",
+   "name": "Mercator",
+   "color": "#D7141A",
+   "website": "https://www.mercator.si",
+   "catalogUrl": "https://www.mercator.si/katalogi/",
+   "section": "zivila"
+  },
+  {
+   "id": "spar",
+   "name": "SPAR / INTERSPAR",
+   "color": "#00784A",
+   "website": "https://www.spar.si",
+   "catalogUrl": "https://online.spar.si/ca/aktualno/iz-letaka/S17/S17-1",
+   "section": "zivila"
+  },
+  {
+   "id": "tus",
+   "name": "Tuš",
+   "color": "#7DB928",
+   "website": "https://www.tus.si",
+   "catalogUrl": "https://www.tus.si/aktualno/katalogi-in-revije/",
+   "section": "zivila"
+  },
+  {
+   "id": "hofer",
+   "name": "HOFER",
+   "color": "#1A2D6D",
+   "website": "https://www.hofer.si",
+   "catalogUrl": "https://www.hofer.si/sl/ponudba.html",
+   "section": "zivila"
+  },
+  {
+   "id": "lidl",
+   "name": "Lidl",
+   "color": "#0050AA",
+   "website": "https://www.lidl.si",
+   "catalogUrl": "https://www.lidl.si/c/spletni-katalog/s10019133",
+   "section": "zivila"
+  },
+  {
+   "id": "eurospin",
+   "name": "Eurospin",
+   "color": "#E6A800",
+   "website": "https://www.eurospin.si",
+   "catalogUrl": "https://www.eurospin.si/akcije/",
+   "section": "zivila"
+  },
+  {
+   "id": "obi",
+   "name": "OBI",
+   "color": "#FF6A00",
+   "website": "https://www.obi.si",
+   "catalogUrl": "https://www.obi.si/katalog",
+   "section": "dom"
+  }
+ ],
+ "catalogs": [
+  {
+   "chain": "mercator",
+   "title": "Redni katalog od 15. 10. do 21. 10. 2026",
+   "url": "https://www.mercator.si/katalogi/redni-katalog-od-15-10-do-21-10-2026/",
+   "validFrom": "2026-10-15",
+   "validTo": "2026-10-21"
+  },
+  {
+   "chain": "mercator",
+   "title": "Pika zgibanka od 7.10. do 6.11.2026",
+   "url": "https://www.mercator.si/katalogi/pika-zgibanka-od-7-10-do-6-11-2026/",
+   "validFrom": "2026-10-07",
+   "validTo": "2026-11-06"
+  },
+  {
+   "chain": "mercator",
+   "title": "Mercator Cash&Carry: redni katalog od 1. 10. do 31. 10. 2026",
+   "url": "https://www.mercator.si/katalogi/mercator-cash-and-carry-redni-katalog-od-1-10-do-31-10-2026/",
+   "validFrom": "2026-10-01",
+   "validTo": "2026-10-31"
+  },
+  {
+   "chain": "mercator",
+   "title": "Katalog Radi imamo domače: Domače je preprosto dobro",
+   "url": "https://www.mercator.si/katalogi/katalog-radi-imamo-domace-domace-je-preprosto-dobro-2/",
+   "validFrom": null,
+   "validTo": null
+  },
+  {
+   "chain": "mercator",
+   "title": "Redni katalog (PDF) od 2026-10-15",
+   "url": "https://www.mercator.si/assets/Katalogi/2026-10-15-Redni-katalog-200x275mm-web.pdf",
+   "validFrom": "2026-10-15",
+   "validTo": null
+  }
+ ],
+ "sections": [
+  {
+   "id": "zivila",
+   "label": "Živila in vsakdanje potrebščine"
+  },
+  {
+   "id": "dom",
+   "label": "Dom, vrt in DIY"
+  }
+ ],
+ "categories": [
+  {
+   "id": "meso",
+   "label": "Meso",
+   "section": "zivila",
+   "food": true,
+   "icon": "fork.knife"
+  },
+  {
+   "id": "perutnina",
+   "label": "Perutnina",
+   "section": "zivila",
+   "food": true,
+   "icon": "bird"
+  },
+  {
+   "id": "ribe",
+   "label": "Ribe in morski sadeži",
+   "section": "zivila",
+   "food": true,
+   "icon": "fish"
+  },
+  {
+   "id": "sir",
+   "label": "Sir",
+   "section": "zivila",
+   "food": true,
+   "icon": "triangle.lefthalf.filled"
+  },
+  {
+   "id": "mlecni",
+   "label": "Mlečni izdelki in jajca",
+   "section": "zivila",
+   "food": true,
+   "icon": "carton"
+  },
+  {
+   "id": "zelenjava",
+   "label": "Zelenjava",
+   "section": "zivila",
+   "food": true,
+   "icon": "carrot"
+  },
+  {
+   "id": "sadje",
+   "label": "Sadje",
+   "section": "zivila",
+   "food": true,
+   "icon": "apple.logo"
+  },
+  {
+   "id": "kruh",
+   "label": "Kruh in pekovsko",
+   "section": "zivila",
+   "food": true,
+   "icon": "birthday.cake"
+  },
+  {
+   "id": "testenine",
+   "label": "Testenine, riž in moka",
+   "section": "zivila",
+   "food": true,
+   "icon": "takeoutbag.and.cup.and.straw"
+  },
+  {
+   "id": "zamrznjeno",
+   "label": "Zamrznjeno",
+   "section": "zivila",
+   "food": true,
+   "icon": "snowflake"
+  },
+  {
+   "id": "pijace",
+   "label": "Pijače",
+   "section": "zivila",
+   "food": true,
+   "icon": "waterbottle"
+  },
+  {
+   "id": "sladko",
+   "label": "Sladko in prigrizki",
+   "section": "zivila",
+   "food": true,
+   "icon": "popcorn"
+  },
+  {
+   "id": "ostalo",
+   "label": "Ostala živila",
+   "section": "zivila",
+   "food": true,
+   "icon": "basket"
+  },
+  {
+   "id": "drogerija",
+   "label": "Drogerija in nega",
+   "section": "zivila",
+   "food": false,
+   "icon": "drop"
+  },
+  {
+   "id": "gospodinjstvo",
+   "label": "Čistila in gospodinjstvo",
+   "section": "zivila",
+   "food": false,
+   "icon": "bubbles.and.sparkles"
+  },
+  {
+   "id": "zivali",
+   "label": "Za živali",
+   "section": "zivila",
+   "food": false,
+   "icon": "pawprint"
+  },
+  {
+   "id": "dom",
+   "label": "Dom in dekoracija",
+   "section": "dom",
+   "food": false,
+   "icon": "sofa"
+  },
+  {
+   "id": "kuhinja",
+   "label": "Kuhinja in posoda",
+   "section": "dom",
+   "food": false,
+   "icon": "frying.pan"
+  },
+  {
+   "id": "vrt",
+   "label": "Vrt in rastline",
+   "section": "dom",
+   "food": false,
+   "icon": "leaf"
+  },
+  {
+   "id": "orodje",
+   "label": "Orodje, gradnja in DIY",
+   "section": "dom",
+   "food": false,
+   "icon": "hammer"
+  },
+  {
+   "id": "tehnika",
+   "label": "Tehnika in aparati",
+   "section": "dom",
+   "food": false,
+   "icon": "powerplug"
+  },
+  {
+   "id": "oblacila",
+   "label": "Oblačila in obutev",
+   "section": "dom",
+   "food": false,
+   "icon": "tshirt"
+  },
+  {
+   "id": "prosti_cas",
+   "label": "Prosti čas in igrače",
+   "section": "dom",
+   "food": false,
+   "icon": "figure.play"
+  },
+  {
+   "id": "avto",
+   "label": "Avto-moto",
+   "section": "dom",
+   "food": false,
+   "icon": "car"
+  },
+  {
+   "id": "ostalo_dom",
+   "label": "Ostalo za dom",
+   "section": "dom",
+   "food": false,
+   "icon": "shippingbox"
+  }
+ ],
+ "kinds": [
+  {
+   "id": "piscancje-prsi",
+   "label": "Piščančje prsi / file",
+   "categories": [
+    "perutnina"
+   ]
+  },
+  {
+   "id": "piscancja-bedra",
+   "label": "Piščančja bedra / krače",
+   "categories": [
+    "perutnina"
+   ]
+  },
+  {
+   "id": "piscanec-cel",
+   "label": "Cel piščanec",
+   "categories": [
+    "perutnina"
+   ]
+  },
+  {
+   "id": "puranje-prsi",
+   "label": "Puranje prsi / file",
+   "categories": [
+    "perutnina"
+   ]
+  },
+  {
+   "id": "mleto-meso",
+   "label": "Mleto meso",
+   "categories": [
+    "meso"
+   ]
+  },
+  {
+   "id": "svinjski-vrat",
+   "label": "Svinjski vrat",
+   "categories": [
+    "meso"
+   ]
+  },
+  {
+   "id": "svinjska-rebra",
+   "label": "Svinjska rebra",
+   "categories": [
+    "meso"
+   ]
+  },
+  {
+   "id": "svinjski-zrezki",
+   "label": "Svinjski zrezki / kare / file",
+   "categories": [
+    "meso"
+   ]
+  },
+  {
+   "id": "govedina-juha",
+   "label": "Govedina za juho",
+   "categories": [
+    "meso"
+   ]
+  },
+  {
+   "id": "goveji-zrezki",
+   "label": "Goveji zrezki / steak",
+   "categories": [
+    "meso"
+   ]
+  },
+  {
+   "id": "hrenovke",
+   "label": "Hrenovke",
+   "categories": [
+    "meso",
+    "perutnina"
+   ]
+  },
+  {
+   "id": "kranjska",
+   "label": "Kranjska klobasa",
+   "categories": [
+    "meso"
+   ]
+  },
+  {
+   "id": "prsut",
+   "label": "Pršut",
+   "categories": [
+    "meso"
+   ]
+  },
+  {
+   "id": "sunka",
+   "label": "Šunka",
+   "categories": [
+    "meso",
+    "perutnina"
+   ]
+  },
+  {
+   "id": "slanina",
+   "label": "Slanina",
+   "categories": [
+    "meso"
+   ]
+  },
+  {
+   "id": "losos",
+   "label": "Losos",
+   "categories": [
+    "ribe"
+   ]
+  },
+  {
+   "id": "tuna",
+   "label": "Tuna",
+   "categories": [
+    "ribe"
+   ]
+  },
+  {
+   "id": "oslic",
+   "label": "Oslič",
+   "categories": [
+    "ribe"
+   ]
+  },
+  {
+   "id": "orada-brancin",
+   "label": "Orada / brancin",
+   "categories": [
+    "ribe"
+   ]
+  },
+  {
+   "id": "kozice",
+   "label": "Kozice",
+   "categories": [
+    "ribe"
+   ]
+  },
+  {
+   "id": "mocarela",
+   "label": "Mocarela",
+   "categories": [
+    "sir"
+   ]
+  },
+  {
+   "id": "trdi-sir",
+   "label": "Trdi sir (gavda, edamec, ementaler …)",
+   "categories": [
+    "sir"
+   ]
+  },
+  {
+   "id": "parmezan",
+   "label": "Parmezan / Grana Padano",
+   "categories": [
+    "sir"
+   ]
+  },
+  {
+   "id": "feta",
+   "label": "Feta / beli sir",
+   "categories": [
+    "sir"
+   ]
+  },
+  {
+   "id": "mleko",
+   "label": "Mleko",
+   "categories": [
+    "mlecni"
+   ]
+  },
+  {
+   "id": "jogurt",
+   "label": "Jogurt (navadni)",
+   "categories": [
+    "mlecni"
+   ]
+  },
+  {
+   "id": "skuta",
+   "label": "Skuta",
+   "categories": [
+    "mlecni"
+   ]
+  },
+  {
+   "id": "maslo",
+   "label": "Maslo",
+   "categories": [
+    "mlecni"
+   ]
+  },
+  {
+   "id": "smetana-kuhanje",
+   "label": "Smetana za kuhanje",
+   "categories": [
+    "mlecni"
+   ]
+  },
+  {
+   "id": "sladka-smetana",
+   "label": "Sladka smetana",
+   "categories": [
+    "mlecni"
+   ]
+  },
+  {
+   "id": "jajca",
+   "label": "Jajca",
+   "categories": [
+    "mlecni"
+   ]
+  },
+  {
+   "id": "krompir",
+   "label": "Krompir",
+   "categories": [
+    "zelenjava"
+   ]
+  },
+  {
+   "id": "cebula",
+   "label": "Čebula",
+   "categories": [
+    "zelenjava"
+   ]
+  },
+  {
+   "id": "cesen",
+   "label": "Česen",
+   "categories": [
+    "zelenjava"
+   ]
+  },
+  {
+   "id": "paradiznik",
+   "label": "Paradižnik",
+   "categories": [
+    "zelenjava"
+   ]
+  },
+  {
+   "id": "paprika",
+   "label": "Paprika",
+   "categories": [
+    "zelenjava"
+   ]
+  },
+  {
+   "id": "kumare",
+   "label": "Kumare",
+   "categories": [
+    "zelenjava"
+   ]
+  },
+  {
+   "id": "solata",
+   "label": "Solata",
+   "categories": [
+    "zelenjava"
+   ]
+  },
+  {
+   "id": "zelje",
+   "label": "Zelje",
+   "categories": [
+    "zelenjava"
+   ]
+  },
+  {
+   "id": "korenje",
+   "label": "Korenje",
+   "categories": [
+    "zelenjava"
+   ]
+  },
+  {
+   "id": "jabolka",
+   "label": "Jabolka",
+   "categories": [
+    "sadje"
+   ]
+  },
+  {
+   "id": "hruske",
+   "label": "Hruške",
+   "categories": [
+    "sadje"
+   ]
+  },
+  {
+   "id": "banane",
+   "label": "Banane",
+   "categories": [
+    "sadje"
+   ]
+  },
+  {
+   "id": "pomarance",
+   "label": "Pomaranče",
+   "categories": [
+    "sadje"
+   ]
+  },
+  {
+   "id": "mandarine",
+   "label": "Mandarine / klementine",
+   "categories": [
+    "sadje"
+   ]
+  },
+  {
+   "id": "limone",
+   "label": "Limone",
+   "categories": [
+    "sadje"
+   ]
+  },
+  {
+   "id": "grozdje",
+   "label": "Grozdje",
+   "categories": [
+    "sadje"
+   ]
+  },
+  {
+   "id": "kivi",
+   "label": "Kivi",
+   "categories": [
+    "sadje"
+   ]
+  },
+  {
+   "id": "kaki",
+   "label": "Kaki",
+   "categories": [
+    "sadje"
+   ]
+  },
+  {
+   "id": "kruh",
+   "label": "Kruh",
+   "categories": [
+    "kruh"
+   ]
+  },
+  {
+   "id": "toast",
+   "label": "Toast",
+   "categories": [
+    "kruh"
+   ]
+  },
+  {
+   "id": "testenine",
+   "label": "Testenine",
+   "categories": [
+    "testenine"
+   ]
+  },
+  {
+   "id": "riz",
+   "label": "Riž",
+   "categories": [
+    "testenine"
+   ]
+  },
+  {
+   "id": "moka",
+   "label": "Moka",
+   "categories": [
+    "testenine"
+   ]
+  },
+  {
+   "id": "sladkor",
+   "label": "Sladkor",
+   "categories": [
+    "ostalo"
+   ]
+  },
+  {
+   "id": "olje",
+   "label": "Sončnično / jedilno olje",
+   "categories": [
+    "ostalo"
+   ]
+  },
+  {
+   "id": "olivno-olje",
+   "label": "Olivno olje",
+   "categories": [
+    "ostalo"
+   ]
+  },
+  {
+   "id": "kava-mleta",
+   "label": "Kava (mleta / zrna)",
+   "categories": [
+    "pijace"
+   ]
+  },
+  {
+   "id": "kava-kapsule",
+   "label": "Kava v kapsulah",
+   "categories": [
+    "pijace"
+   ]
+  },
+  {
+   "id": "voda",
+   "label": "Voda",
+   "categories": [
+    "pijace"
+   ]
+  },
+  {
+   "id": "pivo",
+   "label": "Pivo",
+   "categories": [
+    "pijace"
+   ]
+  },
+  {
+   "id": "sok",
+   "label": "Sok",
+   "categories": [
+    "pijace"
+   ]
+  },
+  {
+   "id": "cokolada",
+   "label": "Čokolada",
+   "categories": [
+    "sladko"
+   ]
+  },
+  {
+   "id": "cips",
+   "label": "Čips",
+   "categories": [
+    "sladko"
+   ]
+  },
+  {
+   "id": "toaletni-papir",
+   "label": "Toaletni papir",
+   "categories": [
+    "gospodinjstvo",
+    "drogerija"
+   ]
+  },
+  {
+   "id": "kuhinjske-brisace",
+   "label": "Kuhinjske brisače",
+   "categories": [
+    "gospodinjstvo"
+   ]
+  },
+  {
+   "id": "detergent",
+   "label": "Pralno sredstvo",
+   "categories": [
+    "gospodinjstvo"
+   ]
+  },
+  {
+   "id": "pomivalni-stroj",
+   "label": "Tablete za pomivalni stroj",
+   "categories": [
+    "gospodinjstvo"
+   ]
+  }
+ ],
+ "stats": {
+  "offers": 5711,
+  "coupons": 10,
+  "unclassified": 113,
+  "byCategory": {
+   "avto": 22,
+   "dom": 245,
+   "drogerija": 1078,
+   "gospodinjstvo": 722,
+   "kruh": 95,
+   "kuhinja": 179,
+   "meso": 183,
+   "mlecni": 101,
+   "oblacila": 97,
+   "orodje": 174,
+   "ostalo": 440,
+   "ostalo_dom": 33,
+   "perutnina": 88,
+   "pijace": 637,
+   "prosti_cas": 197,
+   "ribe": 61,
+   "sadje": 142,
+   "sir": 64,
+   "sladko": 598,
+   "tehnika": 60,
+   "testenine": 157,
+   "vrt": 45,
+   "zamrznjeno": 42,
+   "zelenjava": 150,
+   "zivali": 101
+  },
+  "bestUnitPrice": 61
+ }
+}

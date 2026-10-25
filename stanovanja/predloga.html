@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Najem Ljubljana</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--tx:#1b1f24;--mut:#667085;--ac:#1f6feb;--br:#e3e6ea;--warn:#b54708}
+@media(prefers-color-scheme:dark){:root{--bg:#14171c;--card:#1c2128;--tx:#e6e9ee;--mut:#9aa4b2;--ac:#58a6ff;--br:#2c333c;--warn:#f0a35e}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.4 system-ui,sans-serif}
+main{max-width:960px;margin:0 auto;padding:16px}
+h1{font-size:1.4rem;margin:0 0 4px}.sub{color:var(--mut);font-size:.85rem;margin-bottom:12px}
+.filtri{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.filtri select,.filtri input{padding:8px;border:1px solid var(--br);border-radius:8px;background:var(--card);color:var(--tx);font:inherit}
+.filtri input[type=search]{flex:1;min-width:160px}
+.filtri label{display:flex;align-items:center;gap:6px;color:var(--mut);font-size:.9rem}
+.st{color:var(--mut);margin:8px 0}
+.seznam{display:grid;gap:10px}
+.kartica{display:flex;gap:12px;background:var(--card);border:1px solid var(--br);border-radius:12px;overflow:hidden;color:inherit;text-decoration:none}
+.kartica:hover{border-color:var(--ac)}
+.kartica img{width:130px;height:110px;object-fit:cover;flex:none;background:var(--br)}
+.t{padding:10px 10px 10px 0;min-width:0}.t h2{font-size:1rem;margin:0 0 2px}
+.cena{font-weight:700;color:var(--ac)}.m{color:var(--mut);font-size:.85rem}
+.opoz{color:var(--warn);font-size:.8rem}
+@media(max-width:480px){.kartica img{width:96px}}
+</style>
+</head>
+<body>
+<main>
+<h1>Najem Ljubljana in okolica</h1>
+<div class="sub" id="sub"></div>
+<div class="filtri">
+<input type="search" id="q" placeholder="Iskanje (Šiška, Domžale, garsonjera …)">
+<select id="vrsta"><option value="">Stanovanja in sobe</option><option value="stanovanje">Stanovanja</option><option value="soba">Sobe</option></select>
+<select id="razvrsti"><option value="datum">Najnovejše</option><option value="cena">Najcenejše</option><option value="cena-d">Najdražje</option></select>
+<label>do <input type="number" id="max" min="0" step="10" style="width:90px"> €</label>
+<label><input type="checkbox" id="brez" checked> skrij »po dogovoru«</label>
+</div>
+<div class="st" id="st"></div>
+<div class="seznam" id="seznam"></div>
+</main>
+<script>
+const P=/*PODATKI*/null;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+$("max").value=P.max;
+$("sub").textContent=`Bolha.com, osrednjeslovenska regija · zajeto ${P.zajeto}`;
+function prikazi(){
+  const q=$("q").value.toLowerCase(),v=$("vrsta").value,mx=+$("max").value||1e9,brez=$("brez").checked;
+  let l=P.oglasi.filter(o=>(!v||o.vrsta===v)&&o.cena<=mx&&!(brez&&o.dogovor)&&
+    (o.naslov+" "+o.lokacija+" "+o.opis.join(" ")).toLowerCase().includes(q));
+  const r=$("razvrsti").value;
+  l.sort((a,b)=>r==="cena"?a.cena-b.cena:r==="cena-d"?b.cena-a.cena:b.datum.localeCompare(a.datum));
+  $("st").textContent=`${l.length} oglasov`;
+  $("seznam").innerHTML=l.map(o=>`<a class="kartica" href="${esc(o.url)}" target="_blank" rel="noopener">
+    <img src="${esc(o.slika)}" alt="" loading="lazy">
+    <div class="t"><h2>${esc(o.naslov)}</h2>
+    <div><span class="cena">${o.dogovor?"po dogovoru":o.cena+" €/mes."}</span>${o.m2?" · "+esc(o.m2):""}</div>
+    <div class="m">${esc(o.lokacija)} · ${o.vrsta==="soba"?"soba":"stanovanje"} · ${esc(o.datum.split("-").reverse().join(". "))}</div>
+    ${o.dogovor?'<div class="opoz">Cena ni prava najemnina</div>':""}</div></a>`).join("");
+}
+["q","vrsta","razvrsti","max","brez"].forEach(i=>$(i).addEventListener("input",prikazi));
+prikazi();
+</script>
+</body>
+</html>

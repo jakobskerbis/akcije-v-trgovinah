@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akcije SI – podatki</title>
+<meta name="robots" content="noindex">
+<style>
+  :root { --bg:#fff; --fg:#1b1b1f; --muted:#666; --line:#e3e3e8; --ok:#1a7f37; --err:#c62828; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#141417; --fg:#ececf1; --muted:#a0a0aa; --line:#2c2c33; --ok:#3fb950; --err:#ff6b6b; } }
+  body { margin:0; padding:16px; background:var(--bg); color:var(--fg); font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }
+  main { max-width:860px; margin:0 auto; }
+  h1 { font-size:22px; margin:8px 0 4px; }
+  p { color:var(--muted); margin:0 0 16px; }
+  table { width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums; }
+  th, td { text-align:left; padding:8px 6px; border-bottom:1px solid var(--line); vertical-align:top; }
+  td.num { text-align:right; }
+  .ok { color:var(--ok); } .error { color:var(--err); }
+  ul { padding-left:18px; } a { color:inherit; }
+  .wrap { overflow-x:auto; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Akcije SI – podatki</h1>
+  <p id="gen">Nalagam …</p>
+  <div class="wrap"><table id="t"><thead><tr><th>Veriga</th><th>Stanje</th><th class="num">Izdelkov</th><th>Opombe</th></tr></thead><tbody></tbody></table></div>
+  <h2>Datoteke</h2>
+  <ul>
+    <li><a href="offers.json">offers.json</a> – akcijske ponudbe</li>
+    <li><a href="coupons.json">coupons.json</a> – kuponi in ugodnosti</li>
+    <li><a href="meta.json">meta.json</a> – stanje virov, kategorije, katalogi</li>
+    <li><a href="guide.json">guide.json</a> – vodič po aplikacijah in programih zvestobe</li>
+    <li><a href="history.json">history.json</a> – zgodovina cen</li>
+    <li><a href="report.md">report.md</a> – poročilo in neuvrščeni izdelki</li>
+  </ul>
+  <p>Zasebni projekt za osebno, nekomercialno rabo. Podatki so last trgovcev; veljajo podatki v trgovini.</p>
+</main>
+<script>
+fetch("meta.json").then(r => r.json()).then(m => {
+  document.getElementById("gen").textContent = "Zadnji zajem: " + new Date(m.generatedAt).toLocaleString("sl-SI") + " · ponudb: " + m.stats.offers;
+  const tb = document.querySelector("#t tbody");
+  for (const s of m.sources) {
+    const tr = document.createElement("tr");
+    const notes = [s.error, ...(s.notes || [])].filter(Boolean).join("; ");
+    for (const [txt, cls] of [[s.chain, ""], [s.status, s.status], [String(s.count), "num"], [notes, ""]]) {
+      const td = document.createElement("td"); td.textContent = txt; if (cls) td.className = cls; tr.appendChild(td);
+    }
+    tb.appendChild(tr);
+  }
+}).catch(() => { document.getElementById("gen").textContent = "meta.json ni dosegljiv."; });
+</script>
+</body>
+</html>
